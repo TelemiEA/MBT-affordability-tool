@@ -1238,11 +1238,12 @@ if __name__ == "__main__":
     
     # Get port from environment variable (Railway sets this automatically)
     port = int(os.environ.get("PORT", 8001))
-    host = os.environ.get("HOST", "0.0.0.0")
+    host = "0.0.0.0"
     
     print("🚀 Starting Enhanced MBT Affordability Benchmarking Tool...")
     print(f"📱 Dashboard will be available at: http://{host}:{port}")
     print("🗄️ Database: SQLite with historical data storage")
     print("📊 Features: 32 scenarios, trends, historical tracking")
+    print(f"🔧 Environment: PORT={port}, SUPABASE_URL={os.environ.get('SUPABASE_URL', 'Not Set')}")
     
     uvicorn.run(app, host=host, port=port)
