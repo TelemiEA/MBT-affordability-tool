@@ -1,0 +1,1579 @@
+INFO:     Started server process [2548]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+🚀 Starting Enhanced MBT Affordability Benchmarking Tool...
+📱 Dashboard will be available at: http://127.0.0.1:8001
+🗄️ Database: SQLite with historical data storage
+📊 Features: 32 scenarios, trends, historical tracking
+INFO:     127.0.0.1:56517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56528 - "GET /api/scenarios-count HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56650 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56650 - "GET /api/latest-results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "GET /api/latest-results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "GET /api/latest-results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "GET /api/historical-summary HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56653 - "GET /api/historical-summary HTTP/1.1" 404 Not Found
+🚀 Starting FULL 32-scenario MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+📊 Running 64 scenarios...
+\n📊 Scenario 1/64: Sole applicant, employed, £20k
+\n🎯 Running scenario: E.Single with income £20,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £20,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £20,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Precise: £94,900
+   💰 Newcastle: £89,800
+   💰 Gen H: £88,458
+   💰 Accord: £89,800
+   💰 Barclays: £89,800
+   💰 Skipton: £89,750
+   💰 Santander: £89,000
+   💰 Clydesdale: £87,800
+   💰 Nationwide: £80,900
+   💰 HSBC: £80,750
+   💰 Kensington: £80,000
+   💰 Principality: £79,937
+   💰 Halifax: £58,985
+   💰 Metro: £58,693
+   💰 Coventry: £53,100
+   ✅ Successfully extracted 15 target lenders
+   ✅ Successfully extracted 15 lender results from table:
+      💰 Precise: £94,900
+      💰 Newcastle: £89,800
+      💰 Gen H: £88,458
+      💰 Accord: £89,800
+      💰 Barclays: £89,800
+      💰 Skipton: £89,750
+      💰 Santander: £89,000
+      💰 Clydesdale: £87,800
+      💰 Nationwide: £80,900
+      💰 HSBC: £80,750
+      💰 Kensington: £80,000
+      💰 Principality: £79,937
+      💰 Halifax: £58,985
+      💰 Metro: £58,693
+      💰 Coventry: £53,100
+   ✅ Results extracted!
+✅ Scenario 1 completed: 15 lenders
+\n📊 Scenario 2/64: Sole applicant, self-employed, £20k
+\n🎯 Running scenario: S.Single with income £20,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £20,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £20,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £10,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Precise: £94,900
+   💰 Gen H: £89,800
+   💰 Nottingham: £78,999
+   💰 Kensington: £80,000
+   💰 Barclays: £67,350
+   💰 Accord: £67,350
+   💰 Newcastle: £57,842
+   💰 Coventry: £54,900
+   💰 Principality: £54,414
+   💰 Santander: £46,802
+   💰 Skipton: £49,500
+   💰 Nationwide: £35,700
+   💰 HSBC: £21,450
+   💰 Halifax: £20,510
+   ✅ Successfully extracted 14 target lenders
+   ✅ Successfully extracted 14 lender results from table:
+      💰 Precise: £94,900
+      💰 Gen H: £89,800
+      💰 Nottingham: £78,999
+      💰 Kensington: £80,000
+      💰 Barclays: £67,350
+      💰 Accord: £67,350
+      💰 Newcastle: £57,842
+      💰 Coventry: £54,900
+      💰 Principality: £54,414
+      💰 Santander: £46,802
+      💰 Skipton: £49,500
+      💰 Nationwide: £35,700
+      💰 HSBC: £21,450
+      💰 Halifax: £20,510
+   ✅ Results extracted!
+✅ Scenario 2 completed: 14 lenders
+\n📊 Scenario 3/64: Sole applicant, employed, £25k
+\n🎯 Running scenario: E.Single with income £25,000
+   ✅ Opened case: QX002187461
+   💰 Updating employed income to £25,000
+   ⚠️ Could not find annual basic salary field
+   ❌ Income update failed
+\n📊 Scenario 4/64: Sole applicant, self-employed, £25k
+\n🎯 Running scenario: S.Single with income £25,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £25,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £25,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £12,500
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Precise: £118,700
+   💰 Gen H: £112,250
+   💰 Kensington: £100,000
+   💰 Coventry: £86,900
+   💰 Newcastle: £84,188
+   💰 Barclays: £84,187
+   💰 Accord: £84,187
+   💰 Santander: £80,925
+   💰 Clydesdale: £82,188
+   💰 Skipton: £82,000
+   💰 Principality: £73,556
+   💰 Nationwide: £69,600
+   💰 HSBC: £55,550
+   💰 Metro: £51,113
+   💰 Halifax: £49,365
+   ✅ Successfully extracted 15 target lenders
+   ✅ Successfully extracted 15 lender results from table:
+      💰 Precise: £118,700
+      💰 Gen H: £112,250
+      💰 Kensington: £100,000
+      💰 Coventry: £86,900
+      💰 Newcastle: £84,188
+      💰 Barclays: £84,187
+      💰 Accord: £84,187
+      💰 Santander: £80,925
+      💰 Clydesdale: £82,188
+      💰 Skipton: £82,000
+      💰 Principality: £73,556
+      💰 Nationwide: £69,600
+      💰 HSBC: £55,550
+      💰 Metro: £51,113
+      💰 Halifax: £49,365
+   ✅ Results extracted!
+✅ Scenario 4 completed: 15 lenders
+\n📊 Scenario 5/64: Sole applicant, employed, £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Precise: £142,400
+   💰 Gen H: £134,700
+   💰 Halifax: £134,700
+   💰 Nationwide: £134,700
+   💰 HSBC: £134,700
+   💰 Accord: £134,700
+   💰 Newcastle: £134,700
+   💰 Barclays: £134,700
+   💰 Skipton: £134,500
+   💰 Santander: £133,500
+   💰 Clydesdale: £132,700
+   💰 Principality: £130,983
+   💰 Kensington: £120,000
+   💰 Metro: £119,334
+   💰 Coventry: £117,900
+   ✅ Successfully extracted 15 target lenders
+   ✅ Successfully extracted 15 lender results from table:
+      💰 Precise: £142,400
+      💰 Gen H: £134,700
+      💰 Halifax: £134,700
+      💰 Nationwide: £134,700
+      💰 HSBC: £134,700
+      💰 Accord: £134,700
+      💰 Newcastle: £134,700
+      💰 Barclays: £134,700
+      💰 Skipton: £134,500
+      💰 Santander: £133,500
+      💰 Clydesdale: £132,700
+      💰 Principality: £130,983
+      💰 Kensington: £120,000
+      💰 Metro: £119,334
+      💰 Coventry: £117,900
+   ✅ Results extracted!
+✅ Scenario 5 completed: 15 lenders
+\n📊 Scenario 6/64: Sole applicant, self-employed, £30k
+\n🎯 Running scenario: S.Single with income £30,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £30,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £30,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £15,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Precise: £142,400
+   💰 Gen H: £134,700
+   💰 Coventry: £121,900
+   💰 Kensington: £120,000
+   💰 Nationwide: £101,100
+   💰 Newcastle: £101,025
+   💰 Barclays: £101,025
+   💰 Accord: £101,025
+   💰 Skipton: £101,000
+   💰 Santander: £100,125
+   💰 Clydesdale: £99,025
+   💰 Principality: £92,698
+   💰 HSBC: £90,000
+   💰 Halifax: £78,225
+   💰 Metro: £73,853
+   ✅ Successfully extracted 15 target lenders
+   ✅ Successfully extracted 15 lender results from table:
+      💰 Precise: £142,400
+      💰 Gen H: £134,700
+      💰 Coventry: £121,900
+      💰 Kensington: £120,000
+      💰 Nationwide: £101,100
+      💰 Newcastle: £101,025
+      💰 Barclays: £101,025
+      💰 Accord: £101,025
+      💰 Skipton: £101,000
+      💰 Santander: £100,125
+      💰 Clydesdale: £99,025
+      💰 Principality: £92,698
+      💰 HSBC: £90,000
+      💰 Halifax: £78,225
+      💰 Metro: £73,853
+   ✅ Results extracted!
+✅ Scenario 6 completed: 15 lenders
+\n📊 Scenario 7/64: Sole applicant, employed, £35k
+\n🎯 Running scenario: E.Single with income £35,000
+   ✅ Opened case: QX002187461
+   💰 Updating employed income to £35,000
+   ⚠️ Could not find annual basic salary field
+   ❌ Income update failed
+\n📊 Scenario 8/64: Sole applicant, self-employed, £35k
+\n🎯 Running scenario: S.Single with income £35,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £35,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £35,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £17,500
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Precise: £166,200
+   💰 Coventry: £157,700
+   💰 Gen H: £157,150
+   💰 Kensington: £157,150
+   💰 Nottingham: £157,150
+   💰 Nationwide: £117,900
+   💰 Newcastle: £117,863
+   💰 Halifax: £117,863
+   💰 Barclays: £117,862
+   💰 Accord: £117,862
+   💰 HSBC: £117,850
+   💰 Skipton: £117,750
+   💰 Santander: £116,812
+   💰 Clydesdale: £115,862
+   💰 Principality: £111,840
+   💰 Metro: £96,593
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Precise: £166,200
+      💰 Coventry: £157,700
+      💰 Gen H: £157,150
+      💰 Kensington: £157,150
+      💰 Nottingham: £157,150
+      💰 Nationwide: £117,900
+      💰 Newcastle: £117,863
+      💰 Halifax: £117,863
+      💰 Barclays: £117,862
+      💰 Accord: £117,862
+      💰 HSBC: £117,850
+      💰 Skipton: £117,750
+      💰 Santander: £116,812
+      💰 Clydesdale: £115,862
+      💰 Principality: £111,840
+      💰 Metro: £96,593
+   ✅ Results extracted!
+✅ Scenario 8 completed: 16 lenders
+\n📊 Scenario 9/64: Sole applicant, employed, £40k
+\n🎯 Running scenario: E.Single with income £40,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £40,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £40,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £179,600
+   💰 Leeds: £200,000
+   💰 Halifax: £190,000
+   💰 Precise: £189,900
+   💰 Coventry: £187,200
+   💰 Kensington: £179,600
+   💰 HSBC: £179,600
+   💰 Accord: £179,600
+   💰 Newcastle: £179,600
+   💰 Gen H: £179,600
+   💰 Principality: £179,600
+   💰 Barclays: £179,600
+   💰 Skipton: £179,500
+   💰 Santander: £178,000
+   💰 Metro: £178,000
+   💰 Clydesdale: £177,600
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Nationwide: £179,600
+      💰 Leeds: £200,000
+      💰 Halifax: £190,000
+      💰 Precise: £189,900
+      💰 Coventry: £187,200
+      💰 Kensington: £179,600
+      💰 HSBC: £179,600
+      💰 Accord: £179,600
+      💰 Newcastle: £179,600
+      💰 Gen H: £179,600
+      💰 Principality: £179,600
+      💰 Barclays: £179,600
+      💰 Skipton: £179,500
+      💰 Santander: £178,000
+      💰 Metro: £178,000
+      💰 Clydesdale: £177,600
+   ✅ Results extracted!
+✅ Scenario 9 completed: 16 lenders
+\n📊 Scenario 10/64: Sole applicant, self-employed, £40k
+\n🎯 Running scenario: S.Single with income £40,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £40,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £40,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £20,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Coventry: £193,500
+   💰 Precise: £189,900
+   💰 Gen H: £179,600
+   💰 Kensington: £179,600
+   💰 Leeds: £150,000
+   💰 Newcastle: £134,700
+   💰 Halifax: £134,700
+   💰 HSBC: £134,700
+   💰 Nationwide: £134,700
+   💰 Barclays: £134,700
+   💰 Accord: £134,700
+   💰 Skipton: £134,500
+   💰 Santander: £133,500
+   💰 Clydesdale: £132,700
+   💰 Principality: £130,983
+   💰 Metro: £119,334
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Coventry: £193,500
+      💰 Precise: £189,900
+      💰 Gen H: £179,600
+      💰 Kensington: £179,600
+      💰 Leeds: £150,000
+      💰 Newcastle: £134,700
+      💰 Halifax: £134,700
+      💰 HSBC: £134,700
+      💰 Nationwide: £134,700
+      💰 Barclays: £134,700
+      💰 Accord: £134,700
+      💰 Skipton: £134,500
+      💰 Santander: £133,500
+      💰 Clydesdale: £132,700
+      💰 Principality: £130,983
+      💰 Metro: £119,334
+   ✅ Results extracted!
+✅ Scenario 10 completed: 16 lenders
+\n📊 Scenario 11/64: Joint applicants, employed, £40k total
+\n🎯 Running scenario: E.Joint with income £40,000
+   ✅ Opened case: QX002187450
+   ✅ Reached income section
+   💰 Updating employed income to £40,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £40,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Halifax: £330,000
+   💰 Gen H: £330,000
+   💰 Skipton: £330,000
+   💰 Newcastle: £300,000
+   💰 Santander: £300,000
+   💰 Barclays: £300,000
+   💰 Coventry: £300,000
+   💰 HSBC: £285,000
+   💰 Precise: £284,900
+   💰 Kensington: £269,400
+   💰 Clydesdale: £267,400
+   💰 Metro: £267,000
+   💰 Principality: £258,121
+   ✅ Successfully extracted 13 target lenders
+   ✅ Successfully extracted 13 lender results from table:
+      💰 Halifax: £330,000
+      💰 Gen H: £330,000
+      💰 Skipton: £330,000
+      💰 Newcastle: £300,000
+      💰 Santander: £300,000
+      💰 Barclays: £300,000
+      💰 Coventry: £300,000
+      💰 HSBC: £285,000
+      💰 Precise: £284,900
+      💰 Kensington: £269,400
+      💰 Clydesdale: £267,400
+      💰 Metro: £267,000
+      💰 Principality: £258,121
+   ✅ Results extracted!
+✅ Scenario 11 completed: 13 lenders
+\n📊 Scenario 12/64: Joint applicants, self-employed, £40k total
+\n🎯 Running scenario: S.Joint with income £40,000
+   ✅ Opened case: QX002187301
+   ✅ Reached income section
+   💰 Updating self-employed income to £40,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £40,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £20,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Coventry: £300,000
+   💰 Precise: £284,900
+   💰 Kensington: £269,400
+   💰 Gen H: £269,400
+   💰 Newcastle: £250,000
+   💰 Barclays: £250,000
+   💰 Santander: £250,000
+   💰 HSBC: £237,500
+   💰 Halifax: £224,500
+   💰 Skipton: £224,500
+   💰 Metro: £222,500
+   💰 Clydesdale: £222,500
+   💰 Principality: £216,233
+   ✅ Successfully extracted 13 target lenders
+   ✅ Successfully extracted 13 lender results from table:
+      💰 Coventry: £300,000
+      💰 Precise: £284,900
+      💰 Kensington: £269,400
+      💰 Gen H: £269,400
+      💰 Newcastle: £250,000
+      💰 Barclays: £250,000
+      💰 Santander: £250,000
+      💰 HSBC: £237,500
+      💰 Halifax: £224,500
+      💰 Skipton: £224,500
+      💰 Metro: £222,500
+      💰 Clydesdale: £222,500
+      💰 Principality: £216,233
+   ✅ Results extracted!
+✅ Scenario 12 completed: 13 lenders
+\n📊 Scenario 13/64: Sole applicant, employed, £45k
+\n🎯 Running scenario: E.Single with income £45,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £45,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £45,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £202,100
+   💰 Santander: £225,000
+   💰 Barclays: £225,000
+   💰 Leeds: £225,000
+   💰 Coventry: £219,600
+   💰 HSBC: £213,750
+   💰 Halifax: £213,750
+   💰 Precise: £213,700
+   💰 Kensington: £202,050
+   💰 Accord: £202,050
+   💰 Principality: £202,050
+   💰 Gen H: £202,050
+   💰 Newcastle: £202,050
+   💰 Skipton: £202,000
+   💰 Metro: £200,250
+   💰 Clydesdale: £200,050
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Nationwide: £202,100
+      💰 Santander: £225,000
+      💰 Barclays: £225,000
+      💰 Leeds: £225,000
+      💰 Coventry: £219,600
+      💰 HSBC: £213,750
+      💰 Halifax: £213,750
+      💰 Precise: £213,700
+      💰 Kensington: £202,050
+      💰 Accord: £202,050
+      💰 Principality: £202,050
+      💰 Gen H: £202,050
+      💰 Newcastle: £202,050
+      💰 Skipton: £202,000
+      💰 Metro: £200,250
+      💰 Clydesdale: £200,050
+   ✅ Results extracted!
+✅ Scenario 13 completed: 16 lenders
+\n📊 Scenario 14/64: Sole applicant, self-employed, £45k
+\n🎯 Running scenario: S.Single with income £45,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £45,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £45,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £22,500
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Coventry: £225,000
+   💰 Precise: £213,700
+   💰 Gen H: £202,050
+   💰 Kensington: £202,050
+   💰 Leeds: £168,750
+   💰 Nationwide: £151,600
+   💰 Newcastle: £151,538
+   💰 Halifax: £151,538
+   💰 Accord: £151,537
+   💰 Barclays: £151,537
+   💰 Skipton: £151,500
+   💰 HSBC: £151,500
+   💰 Santander: £150,187
+   💰 Principality: £150,125
+   💰 Clydesdale: £149,538
+   💰 Metro: £142,075
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Coventry: £225,000
+      💰 Precise: £213,700
+      💰 Gen H: £202,050
+      💰 Kensington: £202,050
+      💰 Leeds: £168,750
+      💰 Nationwide: £151,600
+      💰 Newcastle: £151,538
+      💰 Halifax: £151,538
+      💰 Accord: £151,537
+      💰 Barclays: £151,537
+      💰 Skipton: £151,500
+      💰 HSBC: £151,500
+      💰 Santander: £150,187
+      💰 Principality: £150,125
+      💰 Clydesdale: £149,538
+      💰 Metro: £142,075
+   ✅ Results extracted!
+✅ Scenario 14 completed: 16 lenders
+\n📊 Scenario 15/64: Sole applicant, employed, £50k
+\n🎯 Running scenario: E.Single with income £50,000
+   ✅ Opened case: QX002187461
+   💰 Updating employed income to £50,000
+   ⚠️ Could not find annual basic salary field
+   ❌ Income update failed
+\n📊 Scenario 16/64: Sole applicant, self-employed, £50k
+\n🎯 Running scenario: S.Single with income £50,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £50,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £50,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £25,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Coventry: £250,000
+   💰 Precise: £237,400
+   💰 Gen H: £224,500
+   💰 Kensington: £224,500
+   💰 Nottingham: £224,500
+   💰 Leeds: £187,500
+   💰 Nationwide: £168,400
+   💰 Principality: £168,375
+   💰 Halifax: £168,375
+   💰 Newcastle: £168,375
+   💰 Accord: £168,375
+   💰 Barclays: £168,375
+   💰 HSBC: £168,350
+   💰 Skipton: £168,250
+   💰 Santander: £166,875
+   💰 Clydesdale: £166,375
+   💰 Metro: £164,815
+   ✅ Successfully extracted 17 target lenders
+   ✅ Successfully extracted 17 lender results from table:
+      💰 Coventry: £250,000
+      💰 Precise: £237,400
+      💰 Gen H: £224,500
+      💰 Kensington: £224,500
+      💰 Nottingham: £224,500
+      💰 Leeds: £187,500
+      💰 Nationwide: £168,400
+      💰 Principality: £168,375
+      💰 Halifax: £168,375
+      💰 Newcastle: £168,375
+      💰 Accord: £168,375
+      💰 Barclays: £168,375
+      💰 HSBC: £168,350
+      💰 Skipton: £168,250
+      💰 Santander: £166,875
+      💰 Clydesdale: £166,375
+      💰 Metro: £164,815
+   ✅ Results extracted!
+✅ Scenario 16 completed: 17 lenders
+\n📊 Scenario 17/64: Joint applicants, employed, £50k total
+\n🎯 Running scenario: E.Joint with income £50,000
+   ✅ Opened case: QX002187450
+   ✅ Reached income section
+   💰 Updating employed income to £50,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £50,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £385,000
+   💰 Skipton: £385,000
+   💰 Halifax: £385,000
+   💰 Barclays: £350,000
+   💰 Coventry: £350,000
+   💰 Newcastle: £350,000
+   💰 Santander: £350,000
+   💰 Clydesdale: £348,000
+   💰 HSBC: £332,500
+   💰 Precise: £332,400
+   💰 Kensington: £314,300
+   💰 Metro: £311,500
+   💰 Principality: £300,009
+   ✅ Successfully extracted 13 target lenders
+   ✅ Successfully extracted 13 lender results from table:
+      💰 Gen H: £385,000
+      💰 Skipton: £385,000
+      💰 Halifax: £385,000
+      💰 Barclays: £350,000
+      💰 Coventry: £350,000
+      💰 Newcastle: £350,000
+      💰 Santander: £350,000
+      💰 Clydesdale: £348,000
+      💰 HSBC: £332,500
+      💰 Precise: £332,400
+      💰 Kensington: £314,300
+      💰 Metro: £311,500
+      💰 Principality: £300,009
+   ✅ Results extracted!
+✅ Scenario 17 completed: 13 lenders
+\n📊 Scenario 18/64: Joint applicants, self-employed, £50k total
+\n🎯 Running scenario: S.Joint with income £50,000
+   ✅ Opened case: QX002187301
+   ✅ Reached income section
+   💰 Updating self-employed income to £50,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £50,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £25,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £314,300
+   💰 Santander: £287,500
+   💰 HSBC: £273,100
+   💰 Metro: £255,875
+   ✅ Successfully extracted 4 target lenders
+   ✅ Successfully extracted 4 lender results from table:
+      💰 Gen H: £314,300
+      💰 Santander: £287,500
+      💰 HSBC: £273,100
+      💰 Metro: £255,875
+   ✅ Results extracted!
+✅ Scenario 18 completed: 4 lenders
+\n📊 Scenario 19/64: Sole applicant, employed, £55k
+\n🎯 Running scenario: E.Single with income £55,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £55,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £55,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £302,500
+   💰 Santander: £275,000
+   💰 HSBC: £261,250
+   💰 Metro: £244,750
+   ✅ Successfully extracted 4 target lenders
+   ✅ Successfully extracted 4 lender results from table:
+      💰 Gen H: £302,500
+      💰 Santander: £275,000
+      💰 HSBC: £261,250
+      💰 Metro: £244,750
+   ✅ Results extracted!
+✅ Scenario 19 completed: 4 lenders
+\n📊 Scenario 20/64: Sole applicant, self-employed, £55k
+\n🎯 Running scenario: S.Single with income £55,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £55,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £55,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £27,500
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £246,950
+   💰 HSBC: £185,200
+   💰 Santander: £183,562
+   💰 Metro: £183,562
+   ✅ Successfully extracted 4 target lenders
+   ✅ Successfully extracted 4 lender results from table:
+      💰 Gen H: £246,950
+      💰 HSBC: £185,200
+      💰 Santander: £183,562
+      💰 Metro: £183,562
+   ✅ Results extracted!
+✅ Scenario 20 completed: 4 lenders
+\n📊 Scenario 21/64: Sole applicant, employed, £60k
+\n🎯 Running scenario: E.Single with income £60,000
+   ✅ Opened case: QX002187461
+   💰 Updating employed income to £60,000
+   ⚠️ Could not find annual basic salary field
+   ❌ Income update failed
+\n📊 Scenario 22/64: Sole applicant, self-employed, £60k
+\n🎯 Running scenario: S.Single with income £60,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £60,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £60,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £30,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £269,400
+   ✅ Successfully extracted 1 target lenders
+   ✅ Successfully extracted 1 lender results from table:
+      💰 Gen H: £269,400
+   ✅ Results extracted!
+✅ Scenario 22 completed: 1 lenders
+\n📊 Scenario 23/64: Joint applicants, employed, £60k total
+\n🎯 Running scenario: E.Joint with income £60,000
+   ✅ Opened case: QX002187450
+   ✅ Reached income section
+   💰 Updating employed income to £60,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £60,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £440,000
+   💰 HSBC: £380,000
+   💰 Metro: £356,000
+   ✅ Successfully extracted 3 target lenders
+   ✅ Successfully extracted 3 lender results from table:
+      💰 Gen H: £440,000
+      💰 HSBC: £380,000
+      💰 Metro: £356,000
+   ✅ Results extracted!
+✅ Scenario 23 completed: 3 lenders
+\n📊 Scenario 24/64: Joint applicants, self-employed, £60k total
+\n🎯 Running scenario: S.Joint with income £60,000
+   ✅ Opened case: QX002187301
+   ✅ Reached income section
+   💰 Updating self-employed income to £60,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £60,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £30,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £359,200
+   💰 Santander: £325,000
+   💰 HSBC: £308,750
+   💰 Metro: £289,250
+   ✅ Successfully extracted 4 target lenders
+   ✅ Successfully extracted 4 lender results from table:
+      💰 Gen H: £359,200
+      💰 Santander: £325,000
+      💰 HSBC: £308,750
+      💰 Metro: £289,250
+   ✅ Results extracted!
+✅ Scenario 24 completed: 4 lenders
+\n📊 Scenario 25/64: Sole applicant, employed, £65k
+\n🎯 Running scenario: E.Single with income £65,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £65,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £65,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £291,900
+   💰 Skipton: £357,500
+   💰 Halifax: £357,500
+   💰 Gen H: £357,500
+   💰 Leeds: £325,000
+   💰 Barclays: £325,000
+   💰 Santander: £325,000
+   💰 Coventry: £325,000
+   💰 Newcastle: £325,000
+   💰 Clydesdale: £323,000
+   💰 HSBC: £308,750
+   💰 Precise: £308,700
+   💰 Accord: £291,850
+   💰 Kensington: £291,850
+   💰 Principality: £291,613
+   💰 Metro: £289,250
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Nationwide: £291,900
+      💰 Skipton: £357,500
+      💰 Halifax: £357,500
+      💰 Gen H: £357,500
+      💰 Leeds: £325,000
+      💰 Barclays: £325,000
+      💰 Santander: £325,000
+      💰 Coventry: £325,000
+      💰 Newcastle: £325,000
+      💰 Clydesdale: £323,000
+      💰 HSBC: £308,750
+      💰 Precise: £308,700
+      💰 Accord: £291,850
+      💰 Kensington: £291,850
+      💰 Principality: £291,613
+      💰 Metro: £289,250
+   ✅ Results extracted!
+✅ Scenario 25 completed: 16 lenders
+\n📊 Scenario 26/64: Sole applicant, self-employed, £65k
+\n🎯 Running scenario: S.Single with income £65,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £65,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £65,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £32,500
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Kensington: £291,850
+   💰 Gen H: £291,850
+   💰 Santander: £243,750
+   💰 HSBC: £231,550
+   💰 Metro: £216,937
+   ✅ Successfully extracted 5 target lenders
+   ✅ Successfully extracted 5 lender results from table:
+      💰 Kensington: £291,850
+      💰 Gen H: £291,850
+      💰 Santander: £243,750
+      💰 HSBC: £231,550
+      💰 Metro: £216,937
+   ✅ Results extracted!
+✅ Scenario 26 completed: 5 lenders
+\n📊 Scenario 27/64: Sole applicant, employed, £70k
+\n🎯 Running scenario: E.Single with income £70,000
+   ✅ Opened case: QX002187461
+   💰 Updating employed income to £70,000
+   ⚠️ Could not find annual basic salary field
+   ❌ Income update failed
+\n📊 Scenario 28/64: Sole applicant, self-employed, £70k
+\n🎯 Running scenario: S.Single with income £70,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £70,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £70,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £35,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Coventry: £350,000
+   💰 Precise: £332,400
+   💰 Kensington: £314,300
+   💰 Gen H: £314,300
+   💰 Skipton: £288,750
+   💰 Newcastle: £262,500
+   💰 Barclays: £262,500
+   💰 Leeds: £262,500
+   💰 Santander: £262,500
+   💰 HSBC: £249,350
+   💰 Nationwide: £235,800
+   💰 Accord: £235,725
+   💰 Principality: £235,725
+   💰 Halifax: £235,725
+   💰 Clydesdale: £233,725
+   💰 Metro: £233,625
+   ✅ Successfully extracted 16 target lenders
+   ✅ Successfully extracted 16 lender results from table:
+      💰 Coventry: £350,000
+      💰 Precise: £332,400
+      💰 Kensington: £314,300
+      💰 Gen H: £314,300
+      💰 Skipton: £288,750
+      💰 Newcastle: £262,500
+      💰 Barclays: £262,500
+      💰 Leeds: £262,500
+      💰 Santander: £262,500
+      💰 HSBC: £249,350
+      💰 Nationwide: £235,800
+      💰 Accord: £235,725
+      💰 Principality: £235,725
+      💰 Halifax: £235,725
+      💰 Clydesdale: £233,725
+      💰 Metro: £233,625
+   ✅ Results extracted!
+✅ Scenario 28 completed: 16 lenders
+\n📊 Scenario 29/64: Joint applicants, employed, £70k total
+\n🎯 Running scenario: E.Joint with income £70,000
+   ✅ Opened case: QX002187450
+   ✅ Reached income section
+   💰 Updating employed income to £70,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £70,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £495,000
+   ✅ Successfully extracted 1 target lenders
+   ✅ Successfully extracted 1 lender results from table:
+      💰 Gen H: £495,000
+   ✅ Results extracted!
+✅ Scenario 29 completed: 1 lenders
+\n📊 Scenario 30/64: Joint applicants, self-employed, £70k total
+\n🎯 Running scenario: S.Joint with income £70,000
+   ✅ Opened case: QX002187301
+   ✅ Reached income section
+   💰 Updating self-employed income to £70,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £70,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £35,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £404,100
+   ✅ Successfully extracted 1 target lenders
+   ✅ Successfully extracted 1 lender results from table:
+      💰 Gen H: £404,100
+   ✅ Results extracted!
+✅ Scenario 30 completed: 1 lenders
+\n📊 Scenario 31/64: Sole applicant, employed, £75k
+\n🎯 Running scenario: E.Single with income £75,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £75,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £75,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ⚠️ Error clicking .zmdi-play: Timeout 30000ms exceeded.
+   ⚠️ No green play button found - proceeding with existing results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £336,800
+   💰 Skipton: £412,500
+   💰 Gen H: £412,500
+   💰 Barclays: £412,500
+   💰 Accord: £375,000
+   💰 Halifax: £412,500
+   💰 Clydesdale: £410,500
+   💰 Coventry: £375,000
+   💰 Newcastle: £375,000
+   💰 Santander: £375,000
+   💰 HSBC: £356,250
+   💰 Precise: £356,200
+   💰 Kensington: £336,750
+   💰 Metro: £333,750
+   💰 Principality: £330,416
+   ✅ Successfully extracted 15 target lenders
+   ✅ Successfully extracted 15 lender results from table:
+      💰 Nationwide: £336,800
+      💰 Skipton: £412,500
+      💰 Gen H: £412,500
+      💰 Barclays: £412,500
+      💰 Accord: £375,000
+      💰 Halifax: £412,500
+      💰 Clydesdale: £410,500
+      💰 Coventry: £375,000
+      💰 Newcastle: £375,000
+      💰 Santander: £375,000
+      💰 HSBC: £356,250
+      💰 Precise: £356,200
+      💰 Kensington: £336,750
+      💰 Metro: £333,750
+      💰 Principality: £330,416
+   ✅ Results extracted!
+✅ Scenario 31 completed: 15 lenders
+\n📊 Scenario 32/64: Sole applicant, self-employed, £75k
+\n🎯 Running scenario: S.Single with income £75,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £75,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £75,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £37,500
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Gen H: £336,750
+   💰 Santander: £281,250
+   💰 HSBC: £267,150
+   💰 Metro: £250,312
+   ✅ Successfully extracted 4 target lenders
+   ✅ Successfully extracted 4 lender results from table:
+      💰 Gen H: £336,750
+      💰 Santander: £281,250
+      💰 HSBC: £267,150
+      💰 Metro: £250,312
+   ✅ Results extracted!
+✅ Scenario 32 completed: 4 lenders
+\n📊 Scenario 33/64: Sole applicant, employed, £80k
+\n🎯 Running scenario: E.Single with income £80,000
+   ✅ Opened case: QX002187461
+   💰 Updating employed income to £80,000
+   ⚠️ Could not find annual basic salary field
+   ❌ Income update failed
+\n📊 Scenario 34/64: Sole applicant, self-employed, £80k
+\n🎯 Running scenario: S.Single with income £80,000
+   ✅ Opened case: QX002187335
+   ✅ Reached income section
+   💰 Updating self-employed income to £80,000
+   🔍 Last year field after clearing: ''
+   ✅ Updated last year profit to: £80,000
+   🔍 Two year field after clearing: ''
+   ✅ Updated two year profit to: £40,000
+   📊 Self-employed fields updated: Last year: True, Two year: True
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 Looking for the green play button...
+   ✅ Found green play button: .zmdi-play
+   ✅ GREEN PLAY BUTTON CLICKED!
+   ⏳ Waiting for fresh calculation...
+   ✅ Fresh calculation complete!
+   ✅ GREEN BUTTON CLICKED - Fresh calculation triggered!
+   ⏳ Waiting for fresh calculation with updated income...
+   ❌ Error in search and extract: Page.wait_for_timeout: Target page, context or browser has been closed
+\n📊 Scenario 35/64: Joint applicants, employed, £80k total
+\n🎯 Running scenario: E.Joint with income £80,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 36/64: Joint applicants, self-employed, £80k total
+\n🎯 Running scenario: S.Joint with income £80,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 37/64: Sole applicant, employed, £90k
+\n🎯 Running scenario: E.Single with income £90,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 38/64: Sole applicant, self-employed, £90k
+\n🎯 Running scenario: S.Single with income £90,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 39/64: Joint applicants, employed, £90k total
+\n🎯 Running scenario: E.Joint with income £90,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 40/64: Joint applicants, self-employed, £90k total
+\n🎯 Running scenario: S.Joint with income £90,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 41/64: Sole applicant, employed, £100k
+\n🎯 Running scenario: E.Single with income £100,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 42/64: Sole applicant, self-employed, £100k
+\n🎯 Running scenario: S.Single with income £100,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 43/64: Joint applicants, employed, £100k total
+\n🎯 Running scenario: E.Joint with income £100,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 44/64: Joint applicants, self-employed, £100k total
+\n🎯 Running scenario: S.Joint with income £100,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 45/64: Joint applicants, employed, £110k total
+\n🎯 Running scenario: E.Joint with income £110,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 46/64: Joint applicants, self-employed, £110k total
+\n🎯 Running scenario: S.Joint with income £110,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 47/64: Sole applicant, employed, £120k
+\n🎯 Running scenario: E.Single with income £120,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 48/64: Sole applicant, self-employed, £120k
+\n🎯 Running scenario: S.Single with income £120,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 49/64: Joint applicants, employed, £120k total
+\n🎯 Running scenario: E.Joint with income £120,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 50/64: Joint applicants, self-employed, £120k total
+\n🎯 Running scenario: S.Joint with income £120,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 51/64: Joint applicants, employed, £130k total
+\n🎯 Running scenario: E.Joint with income £130,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 52/64: Joint applicants, self-employed, £130k total
+\n🎯 Running scenario: S.Joint with income £130,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 53/64: Joint applicants, employed, £140k total
+\n🎯 Running scenario: E.Joint with income £140,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 54/64: Joint applicants, self-employed, £140k total
+\n🎯 Running scenario: S.Joint with income £140,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 55/64: Joint applicants, employed, £150k total
+\n🎯 Running scenario: E.Joint with income £150,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 56/64: Joint applicants, self-employed, £150k total
+\n🎯 Running scenario: S.Joint with income £150,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 57/64: Joint applicants, employed, £160k total
+\n🎯 Running scenario: E.Joint with income £160,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 58/64: Joint applicants, self-employed, £160k total
+\n🎯 Running scenario: S.Joint with income £160,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 59/64: Joint applicants, employed, £180k total
+\n🎯 Running scenario: E.Joint with income £180,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 60/64: Joint applicants, self-employed, £180k total
+\n🎯 Running scenario: S.Joint with income £180,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 61/64: Joint applicants, employed, £200k total
+\n🎯 Running scenario: E.Joint with income £200,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 62/64: Joint applicants, self-employed, £200k total
+\n🎯 Running scenario: S.Joint with income £200,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 63/64: Joint applicants, employed, £250k total
+\n🎯 Running scenario: E.Joint with income £250,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+\n📊 Scenario 64/64: Joint applicants, self-employed, £250k total
+\n🎯 Running scenario: S.Joint with income £250,000
+   ❌ Scenario error: Page.goto: Target page, context or browser has been closed
+🎉 Full automation completed: 27/64 scenarios
+INFO:     127.0.0.1:56656 - "GET /api/run-full-automation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57686 - "GET /api/latest-results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57686 - "GET /api/historical-summary HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57703 - "GET /api/latest-results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57703 - "GET /api/historical-summary HTTP/1.1" 404 Not Found

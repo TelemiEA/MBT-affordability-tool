@@ -1,0 +1,26 @@
+{
+  "case_type": "E.Single",
+  "case_reference": "QX002187461",
+  "income": 40000,
+  "lenders_data": {
+    "Nationwide": 157200,
+    "Precise": 166200,
+    "Kensington": 157150,
+    "Accord": 157150,
+    "Leeds": 157150,
+    "Gen H": 157150,
+    "Newcastle": 157150,
+    "HSBC": 157150,
+    "Barclays": 157150,
+    "Halifax": 157150,
+    "Nottingham": 157150,
+    "Skipton": 157000,
+    "Principality": 156506,
+    "Santander": 155750,
+    "Clydesdale": 155150,
+    "Coventry": 152500,
+    "Metro": 149654,
+    "Atom": 131072
+  },
+  "timestamp": "2025-06-20T16:02:29.122495"
+}

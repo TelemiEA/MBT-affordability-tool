@@ -1,0 +1,60 @@
+{
+  "session_id": "real-session-20250620-165832",
+  "status": "success",
+  "message": "Real MBT automation completed! 1 scenarios processed.",
+  "results": {
+    "scenario_1_single_employed_30k": {
+      "scenario_id": "scenario_1_single_employed_30k",
+      "description": "Single employed \u00a330k",
+      "case_type": "E.Single",
+      "income": 30000,
+      "lender_results": {
+        "Precise": 142400,
+        "Accord": 134700,
+        "Barclays": 134700,
+        "HSBC": 134700,
+        "Newcastle": 134700,
+        "Gen H": 134700,
+        "Nationwide": 134700,
+        "Halifax": 134700,
+        "Skipton": 134500,
+        "Santander": 133500,
+        "Clydesdale": 132700,
+        "Principality": 130983,
+        "Kensington": 120000,
+        "Metro": 119334,
+        "Coventry": 117900
+      },
+      "statistics": {
+        "average": 131614.46666666667,
+        "gen_h_amount": 134700,
+        "gen_h_difference": 3085.5333333333256,
+        "gen_h_rank": 2
+      },
+      "raw_data": {
+        "case_type": "E.Single",
+        "case_reference": "QX002187461",
+        "income": 30000,
+        "lenders_data": {
+          "Precise": 142400,
+          "Accord": 134700,
+          "Barclays": 134700,
+          "HSBC": 134700,
+          "Newcastle": 134700,
+          "Gen H": 134700,
+          "Nationwide": 134700,
+          "Halifax": 134700,
+          "Skipton": 134500,
+          "Santander": 133500,
+          "Clydesdale": 132700,
+          "Principality": 130983,
+          "Kensington": 120000,
+          "Metro": 119334,
+          "Coventry": 117900
+        },
+        "timestamp": "2025-06-20T16:58:32.398433"
+      }
+    }
+  },
+  "timestamp": "2025-06-20T16:58:32.399570"
+}

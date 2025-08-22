@@ -1,0 +1,73 @@
+INFO:     Started server process [89489]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+🚀 Starting REAL MBT Affordability Benchmarking Tool...
+📱 Dashboard will be available at: http://127.0.0.1:8001
+🔗 Connected to real MBT automation
+INFO:     127.0.0.1:60685 - "GET /health HTTP/1.1" 200 OK
+🧪 Testing automation with single scenario...
+🔐 Logging into MBT...
+✅ Login successful
+\n🎯 Running scenario: E.Single with income £25,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £25,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £25,000
+   ✅ Income updated successfully
+   🚀 Looking for affordability results on current page...
+   📍 Staying on current page and scrolling to bottom for results...
+   🔍 Looking for lender logos and affordability amounts at bottom...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £157,200
+   💰 Precise: £166,200
+   💰 Kensington: £157,150
+   💰 Accord: £157,150
+   💰 Leeds: £157,150
+   💰 Gen H: £157,150
+   💰 Newcastle: £157,150
+   💰 HSBC: £157,150
+   💰 Barclays: £157,150
+   💰 Halifax: £157,150
+   💰 Nottingham: £157,150
+   💰 Skipton: £157,000
+   💰 Principality: £156,506
+   💰 Santander: £155,750
+   💰 Clydesdale: £155,150
+   💰 Coventry: £152,500
+   💰 Metro: £149,654
+   💰 Atom: £131,072
+   ✅ Successfully extracted 18 target lenders
+   ✅ Successfully extracted 18 lender results from table:
+      💰 Nationwide: £157,200
+      💰 Precise: £166,200
+      💰 Kensington: £157,150
+      💰 Accord: £157,150
+      💰 Leeds: £157,150
+      💰 Gen H: £157,150
+      💰 Newcastle: £157,150
+      💰 HSBC: £157,150
+      💰 Barclays: £157,150
+      💰 Halifax: £157,150
+      💰 Nottingham: £157,150
+      💰 Skipton: £157,000
+      💰 Principality: £156,506
+      💰 Santander: £155,750
+      💰 Clydesdale: £155,150
+      💰 Coventry: £152,500
+      💰 Metro: £149,654
+      💰 Atom: £131,072
+   ✅ Found affordability results on current page!
+INFO:     127.0.0.1:60721 - "GET /api/test-automation HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89489]

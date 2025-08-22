@@ -1,0 +1,149 @@
+{
+  "session_id": "full-session-20250624-102628",
+  "status": "success",
+  "message": "Full automation completed! 5/64 scenarios successful.",
+  "results": {
+    "single_employed_20k": {
+      "scenario_id": "single_employed_20k",
+      "description": "Sole applicant, employed, \u00a320k",
+      "lender_results": {
+        "Precise": 94900,
+        "Newcastle": 89800,
+        "Accord": 89800,
+        "Barclays": 89800,
+        "Gen H": 88458,
+        "Skipton": 89750,
+        "Santander": 89000,
+        "Clydesdale": 87800,
+        "Nationwide": 80900,
+        "HSBC": 80750,
+        "Kensington": 80000,
+        "Principality": 79937,
+        "Halifax": 58985,
+        "Metro": 58693,
+        "Coventry": 53100
+      },
+      "statistics": {
+        "average": 80778.2,
+        "gen_h_amount": 88458,
+        "gen_h_difference": 7679.800000000003,
+        "gen_h_rank": 7
+      }
+    },
+    "single_self_employed_20k": {
+      "scenario_id": "single_self_employed_20k",
+      "description": "Sole applicant, self-employed, \u00a320k",
+      "lender_results": {
+        "Precise": 94900,
+        "Gen H": 89800,
+        "Nottingham": 78999,
+        "Kensington": 80000,
+        "Accord": 67350,
+        "Barclays": 67350,
+        "Newcastle": 57842,
+        "Coventry": 54900,
+        "Principality": 54414,
+        "Santander": 46802,
+        "Skipton": 49500,
+        "Nationwide": 35700,
+        "HSBC": 21450,
+        "Halifax": 20510
+      },
+      "statistics": {
+        "average": 58536.92857142857,
+        "gen_h_amount": 89800,
+        "gen_h_difference": 31263.071428571428,
+        "gen_h_rank": 2
+      }
+    },
+    "single_self_employed_25k": {
+      "scenario_id": "single_self_employed_25k",
+      "description": "Sole applicant, self-employed, \u00a325k",
+      "lender_results": {
+        "Precise": 118700,
+        "Gen H": 112250,
+        "Nottingham": 112250,
+        "Kensington": 100000,
+        "Coventry": 86900,
+        "Newcastle": 84188,
+        "Accord": 84187,
+        "Barclays": 84187,
+        "Santander": 80925,
+        "Clydesdale": 82188,
+        "Skipton": 82000,
+        "Principality": 73556,
+        "Nationwide": 69600,
+        "HSBC": 55550,
+        "Metro": 51113,
+        "Halifax": 49365
+      },
+      "statistics": {
+        "average": 82934.9375,
+        "gen_h_amount": 112250,
+        "gen_h_difference": 29315.0625,
+        "gen_h_rank": 2
+      }
+    },
+    "single_employed_30k": {
+      "scenario_id": "single_employed_30k",
+      "description": "Sole applicant, employed, \u00a330k",
+      "lender_results": {
+        "Precise": 142400,
+        "Newcastle": 134700,
+        "HSBC": 134700,
+        "Halifax": 134700,
+        "Barclays": 134700,
+        "Gen H": 134700,
+        "Accord": 134700,
+        "Nationwide": 134700,
+        "Skipton": 134500,
+        "Santander": 133500,
+        "Clydesdale": 132700,
+        "Principality": 130983,
+        "Kensington": 120000,
+        "Metro": 119334,
+        "Coventry": 117900
+      },
+      "statistics": {
+        "average": 131614.46666666667,
+        "gen_h_amount": 134700,
+        "gen_h_difference": 3085.5333333333256,
+        "gen_h_rank": 2
+      }
+    },
+    "single_self_employed_30k": {
+      "scenario_id": "single_self_employed_30k",
+      "description": "Sole applicant, self-employed, \u00a330k",
+      "lender_results": {
+        "Precise": 142400,
+        "Nottingham": 134700,
+        "Gen H": 134700,
+        "Coventry": 121900,
+        "Kensington": 120000,
+        "Nationwide": 101100,
+        "Newcastle": 101025,
+        "Accord": 101025,
+        "Barclays": 101025,
+        "Skipton": 101000,
+        "Santander": 100125,
+        "Clydesdale": 99025,
+        "Principality": 92698,
+        "HSBC": 90000,
+        "Halifax": 78225,
+        "Metro": 73853
+      },
+      "statistics": {
+        "average": 105800.0625,
+        "gen_h_amount": 134700,
+        "gen_h_difference": 28899.9375,
+        "gen_h_rank": 2
+      }
+    }
+  },
+  "timestamp": "2025-06-24T10:39:53.560094",
+  "summary": {
+    "total_scenarios": 64,
+    "successful_scenarios": 5,
+    "failed_scenarios": 59
+  }
+}

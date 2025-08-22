@@ -1,0 +1,132 @@
+{
+  "session_id": "full-session-20250721-162529",
+  "status": "success",
+  "message": "Full automation completed! 7/32 scenarios successful.",
+  "results": {
+    "single_employed_20k": {
+      "scenario_id": "single_employed_20k",
+      "description": "Sole applicant, employed, \u00a320k",
+      "lender_results": {
+        "Gen H": 86206
+      },
+      "statistics": {
+        "average": 86206.0,
+        "gen_h_amount": 86206,
+        "gen_h_difference": 0.0,
+        "gen_h_rank": 1
+      }
+    },
+    "single_self_employed_20k": {
+      "scenario_id": "single_self_employed_20k",
+      "description": "Sole applicant, self-employed, \u00a320k",
+      "lender_results": {
+        "Precise": 94900,
+        "Gen H": 87949,
+        "Kensington": 80000,
+        "Coventry": 78900,
+        "Accord": 67350,
+        "Barclays": 67350,
+        "Newcastle": 58878,
+        "Principality": 55402,
+        "Santander": 46645,
+        "Skipton": 48000,
+        "Nationwide": 35700,
+        "Halifax": 20510
+      },
+      "statistics": {
+        "average": 61798.666666666664,
+        "gen_h_amount": 87949,
+        "gen_h_difference": 26150.333333333336,
+        "gen_h_rank": 2
+      }
+    },
+    "single_employed_30k": {
+      "scenario_id": "single_employed_30k",
+      "description": "Sole applicant, employed, \u00a330k",
+      "lender_results": {
+        "Gen H": 134700
+      },
+      "statistics": {
+        "average": 134700.0,
+        "gen_h_amount": 134700,
+        "gen_h_difference": 0.0,
+        "gen_h_rank": 1
+      }
+    },
+    "single_self_employed_30k": {
+      "scenario_id": "single_self_employed_30k",
+      "description": "Sole applicant, self-employed, \u00a330k",
+      "lender_results": {
+        "Gen H": 134700,
+        "Santander": 100125,
+        "Metro": 73853
+      },
+      "statistics": {
+        "average": 102892.66666666667,
+        "gen_h_amount": 134700,
+        "gen_h_difference": 31807.33333333333,
+        "gen_h_rank": 1
+      }
+    },
+    "single_employed_40k": {
+      "scenario_id": "single_employed_40k",
+      "description": "Sole applicant, employed, \u00a340k",
+      "lender_results": {
+        "Gen H": 179600
+      },
+      "statistics": {
+        "average": 179600.0,
+        "gen_h_amount": 179600,
+        "gen_h_difference": 0.0,
+        "gen_h_rank": 1
+      }
+    },
+    "single_self_employed_40k": {
+      "scenario_id": "single_self_employed_40k",
+      "description": "Sole applicant, self-employed, \u00a340k",
+      "lender_results": {
+        "Coventry": 200000,
+        "Precise": 189900,
+        "Kensington": 179600,
+        "Gen H": 179600,
+        "HSBC": 134700,
+        "Accord": 134700,
+        "Newcastle": 134700,
+        "Halifax": 134700,
+        "Leeds": 134700,
+        "Barclays": 134700,
+        "Nationwide": 134700,
+        "Skipton": 134500,
+        "Santander": 133500,
+        "Principality": 133362,
+        "Clydesdale": 132700,
+        "Metro": 119334
+      },
+      "statistics": {
+        "average": 146587.25,
+        "gen_h_amount": 179600,
+        "gen_h_difference": 33012.75,
+        "gen_h_rank": 3
+      }
+    },
+    "joint_employed_40k": {
+      "scenario_id": "joint_employed_40k",
+      "description": "Joint applicants, employed, \u00a340k total",
+      "lender_results": {
+        "Gen H": 179600
+      },
+      "statistics": {
+        "average": 179600.0,
+        "gen_h_amount": 179600,
+        "gen_h_difference": 0.0,
+        "gen_h_rank": 1
+      }
+    }
+  },
+  "timestamp": "2025-07-21T16:44:30.808954",
+  "summary": {
+    "total_scenarios": 32,
+    "successful_scenarios": 7,
+    "failed_scenarios": 25
+  }
+}

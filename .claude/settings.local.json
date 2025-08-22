@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(mkdir:*)",
+      "Bash(curl:*)",
+      "Bash(timeout 30 python3 test_login_quick.py)",
+      "Bash(python:*)",
+      "Bash(timeout 180 python3 mbt_automation_final_v3.py)",
+      "Bash(gtimeout:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(pkill:*)",
+      "Bash(kill:*)",
+      "Bash(sqlite3:*)",
+      "Bash(timeout 180 python3 test_joint_scenarios.py)",
+      "Bash(cp:*)",
+      "Bash(rm:*)",
+      "Bash(/usr/bin/python3:*)",
+      "Bash(exec python3:*)",
+      "Bash(/System/Library/Frameworks/Python.framework/Versions/3.9/bin/python3:*)",
+      "Bash(find:*)",
+      "Bash(env python3:*)"
+    ],
+    "deny": []
+  }
+}

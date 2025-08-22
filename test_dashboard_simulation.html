@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Test</title>
+</head>
+<body>
+    <button id="testBtn">Test Sample Scenarios</button>
+    <div id="status"></div>
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('testBtn').addEventListener('click', async () => {
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+            
+            statusDiv.textContent = 'Testing...';
+            
+            try {
+                const response = await fetch('http://127.0.0.1:8001/api/run-sample-scenarios');
+                const data = await response.json();
+                
+                console.log('Response:', data);
+                
+                if (data.error) {
+                    statusDiv.textContent = `Error: ${data.error}`;
+                    statusDiv.style.color = 'red';
+                } else if (data.status === 'success') {
+                    statusDiv.textContent = '✅ Real MBT automation completed successfully!';
+                    statusDiv.style.color = 'green';
+                    
+                    // Display results
+                    resultsDiv.innerHTML = `
+                        <h3>Results:</h3>
+                        <p>Status: ${data.status}</p>
+                        <p>Message: ${data.message}</p>
+                        <p>Results count: ${Object.keys(data.results || {}).length}</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    statusDiv.textContent = `Unknown status: ${data.status}`;
+                    statusDiv.style.color = 'orange';
+                }
+                
+            } catch (error) {
+                statusDiv.textContent = `Network error: ${error.message}`;
+                statusDiv.style.color = 'red';
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

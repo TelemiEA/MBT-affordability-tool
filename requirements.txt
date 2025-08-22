@@ -1,0 +1,9 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+playwright==1.40.0
+supabase==2.0.2
+python-dotenv==1.0.0
+pandas>=1.5.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+xlsxwriter>=3.0.0

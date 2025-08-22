@@ -1,0 +1,626 @@
+INFO:     Started server process [90345]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+🚀 Starting REAL MBT Affordability Benchmarking Tool...
+📱 Dashboard will be available at: http://127.0.0.1:8001
+🔗 Connected to real MBT automation
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 SEARCHING FOR GREEN BUTTON to trigger fresh calculation...
+   🔍 Trying 20 different button selectors...
+   🎯 Trying selector 1: button:has(i.zmdi-play)
+   📊 Found 0 elements for selector: button:has(i.zmdi-play)
+   🎯 Trying selector 2: button:has(.zmdi-play)
+   📊 Found 0 elements for selector: button:has(.zmdi-play)
+   🎯 Trying selector 3: button i.zmdi-play
+   📊 Found 0 elements for selector: button i.zmdi-play
+   🎯 Trying selector 4: .zmdi-play
+   📊 Found 1 elements for selector: .zmdi-play
+   🎯 Found visible button 1: ''
+   📋 Button HTML: ...
+   ⚡ CLICKING BUTTON: .zmdi-play
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+INFO:     127.0.0.1:61531 - "GET /health HTTP/1.1" 200 OK
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 5: i.zmdi-play
+   📊 Found 1 elements for selector: i.zmdi-play
+   🎯 Found visible button 1: ''
+   📋 Button HTML: ...
+   ⚡ CLICKING BUTTON: i.zmdi-play
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 6: button[class*="play"]
+   📊 Found 0 elements for selector: button[class*="play"]
+   🎯 Trying selector 7: button[class*="run"]
+   📊 Found 0 elements for selector: button[class*="run"]
+   🎯 Trying selector 8: button[title*="run"]
+   📊 Found 0 elements for selector: button[title*="run"]
+   🎯 Trying selector 9: button[title*="calculate"]
+   📊 Found 0 elements for selector: button[title*="calculate"]
+   🎯 Trying selector 10: button[title*="search"]
+   📊 Found 0 elements for selector: button[title*="search"]
+   🎯 Trying selector 11: .btn-success
+   📊 Found 0 elements for selector: .btn-success
+   🎯 Trying selector 12: button[class*="success"]
+   📊 Found 0 elements for selector: button[class*="success"]
+   🎯 Trying selector 13: button[class*="green"]
+   📊 Found 0 elements for selector: button[class*="green"]
+   🎯 Trying selector 14: button[type="submit"]
+   📊 Found 1 elements for selector: button[type="submit"]
+   🎯 Found visible button 1: ''
+   📋 Button HTML: 
+                <i class="zmdi zmdi-save"></i>
+              ...
+   ⚡ CLICKING BUTTON: button[type="submit"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 15: input[type="submit"]
+   📊 Found 0 elements for selector: input[type="submit"]
+   🎯 Trying selector 16: button[class*="btn"]
+   📊 Found 11 elements for selector: button[class*="btn"]
+   🎯 Found visible button 1: ''
+   📋 Button HTML: 
+          <i class="zmdi zmdi-help f20"></i>
+        ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 1: Target page, context or browser has been closed
+   ⚠️ Failed to click element 2: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 3: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 4: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 5: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 6: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 7: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 8: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 9: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 10: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 11: ElementHandle.is_visible: Target page, context or browser has been closed
+   🎯 Trying selector 17: button:has-text("Run")
+   ⚠️ Error with selector button:has-text("Run"): Page.query_selector_all: Target page, context or browser has been closed
+   🎯 Trying selector 18: button:has-text("Search")
+   ⚠️ Error with selector button:has-text("Search"): Page.query_selector_all: Target page, context or browser has been closed
+   🎯 Trying selector 19: button:has-text("Calculate")
+   ⚠️ Error with selector button:has-text("Calculate"): Page.query_selector_all: Target page, context or browser has been closed
+   🎯 Trying selector 20: button:has-text("Go")
+   ⚠️ Error with selector button:has-text("Go"): Page.query_selector_all: Target page, context or browser has been closed
+   ❌ NO GREEN BUTTON FOUND - Will extract cached results
+   ❌ Critical error searching for green button: Page.screenshot: Target page, context or browser has been closed
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   ❌ Error in search and extract: Page.wait_for_timeout: Target page, context or browser has been closed
+   📊 Processing result for scenario_1_single_employed_30k
+   📋 Raw lenders data: {}
+   ⚠️ No lender data for scenario_1_single_employed_30k, but scenario completed
+   💰 Processed amounts: {}
+   ⚠️ No amounts extracted, using demo calculation
+✅ Scenario 1 completed: 0 lenders found
+🎉 Real automation completed: 1 scenarios
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 SEARCHING FOR GREEN BUTTON to trigger fresh calculation...
+   🔍 Trying 20 different button selectors...
+   🎯 Trying selector 1: button:has(i.zmdi-play)
+   📊 Found 0 elements for selector: button:has(i.zmdi-play)
+   🎯 Trying selector 2: button:has(.zmdi-play)
+   📊 Found 0 elements for selector: button:has(.zmdi-play)
+   🎯 Trying selector 3: button i.zmdi-play
+   📊 Found 0 elements for selector: button i.zmdi-play
+   🎯 Trying selector 4: .zmdi-play
+   📊 Found 1 elements for selector: .zmdi-play
+   🎯 Found visible button 1: ''
+   📋 Button HTML: ...
+   ⚡ CLICKING BUTTON: .zmdi-play
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 5: i.zmdi-play
+   📊 Found 1 elements for selector: i.zmdi-play
+   🎯 Found visible button 1: ''
+   📋 Button HTML: ...
+   ⚡ CLICKING BUTTON: i.zmdi-play
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 6: button[class*="play"]
+   📊 Found 0 elements for selector: button[class*="play"]
+   🎯 Trying selector 7: button[class*="run"]
+   📊 Found 0 elements for selector: button[class*="run"]
+   🎯 Trying selector 8: button[title*="run"]
+   📊 Found 0 elements for selector: button[title*="run"]
+   🎯 Trying selector 9: button[title*="calculate"]
+   📊 Found 0 elements for selector: button[title*="calculate"]
+   🎯 Trying selector 10: button[title*="search"]
+   📊 Found 0 elements for selector: button[title*="search"]
+   🎯 Trying selector 11: .btn-success
+   📊 Found 0 elements for selector: .btn-success
+   🎯 Trying selector 12: button[class*="success"]
+   📊 Found 0 elements for selector: button[class*="success"]
+   🎯 Trying selector 13: button[class*="green"]
+   📊 Found 0 elements for selector: button[class*="green"]
+   🎯 Trying selector 14: button[type="submit"]
+   📊 Found 1 elements for selector: button[type="submit"]
+   🎯 Found visible button 1: ''
+   📋 Button HTML: 
+                <i class="zmdi zmdi-save"></i>
+              ...
+   ⚡ CLICKING BUTTON: button[type="submit"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 15: input[type="submit"]
+   📊 Found 0 elements for selector: input[type="submit"]
+   🎯 Trying selector 16: button[class*="btn"]
+   📊 Found 11 elements for selector: button[class*="btn"]
+   🎯 Found visible button 1: ''
+   📋 Button HTML: 
+          <i class="zmdi zmdi-help f20"></i>
+        ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Found visible button 2: ''
+   📋 Button HTML: 
+          <i class="zmdi zmdi-more-vert f20"></i>
+        ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   ⚠️ Failed to click element 2: Timeout 60000ms exceeded.
+   🎯 Found visible button 3: ''
+   📋 Button HTML: 
+                <i class="zmdi zmdi-save"></i>
+              ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 FIRST PRIORITY: Click green button to trigger fresh calculation...
+   🎯 SEARCHING FOR GREEN BUTTON to trigger fresh calculation...
+   🔍 Trying 20 different button selectors...
+   🎯 Trying selector 1: button:has(i.zmdi-play)
+   📊 Found 0 elements for selector: button:has(i.zmdi-play)
+   🎯 Trying selector 2: button:has(.zmdi-play)
+   📊 Found 0 elements for selector: button:has(.zmdi-play)
+   🎯 Trying selector 3: button i.zmdi-play
+   📊 Found 0 elements for selector: button i.zmdi-play
+   🎯 Trying selector 4: .zmdi-play
+   📊 Found 1 elements for selector: .zmdi-play
+   🎯 Found visible button 1: ''
+   📋 Button HTML: ...
+   ⚡ CLICKING BUTTON: .zmdi-play
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 3: Timeout 60000ms exceeded.
+   🎯 Found visible button 4: ''
+   📋 Button HTML: <i class="fa fa-bold"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 5: i.zmdi-play
+   📊 Found 1 elements for selector: i.zmdi-play
+   🎯 Found visible button 1: ''
+   📋 Button HTML: ...
+   ⚡ CLICKING BUTTON: i.zmdi-play
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 4: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 5: ''
+   📋 Button HTML: <i class="fa fa-italic"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 5: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 6: ''
+   📋 Button HTML: <i class="fa fa-underline"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 6: button[class*="play"]
+   📊 Found 0 elements for selector: button[class*="play"]
+   🎯 Trying selector 7: button[class*="run"]
+   📊 Found 0 elements for selector: button[class*="run"]
+   🎯 Trying selector 8: button[title*="run"]
+   📊 Found 0 elements for selector: button[title*="run"]
+   🎯 Trying selector 9: button[title*="calculate"]
+   📊 Found 0 elements for selector: button[title*="calculate"]
+   🎯 Trying selector 10: button[title*="search"]
+   📊 Found 0 elements for selector: button[title*="search"]
+   🎯 Trying selector 11: .btn-success
+   📊 Found 0 elements for selector: .btn-success
+   🎯 Trying selector 12: button[class*="success"]
+   📊 Found 0 elements for selector: button[class*="success"]
+   🎯 Trying selector 13: button[class*="green"]
+   📊 Found 0 elements for selector: button[class*="green"]
+   🎯 Trying selector 14: button[type="submit"]
+   📊 Found 1 elements for selector: button[type="submit"]
+   🎯 Found visible button 1: ''
+   📋 Button HTML: 
+                <i class="zmdi zmdi-save"></i>
+              ...
+   ⚡ CLICKING BUTTON: button[type="submit"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 6: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 7: ''
+   📋 Button HTML: <i class="fa fa-strikethrough"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 7: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 8: ''
+   📋 Button HTML: <i class="fa fa-list-ul"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Trying selector 15: input[type="submit"]
+   📊 Found 0 elements for selector: input[type="submit"]
+   🎯 Trying selector 16: button[class*="btn"]
+   📊 Found 11 elements for selector: button[class*="btn"]
+   🎯 Found visible button 1: ''
+   📋 Button HTML: 
+          <i class="zmdi zmdi-help f20"></i>
+        ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 8: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 9: ''
+   📋 Button HTML: <i class="fa fa-list-ol"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 9: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 10: ''
+   📋 Button HTML: <i class="fa fa-repeat"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 1: Timeout 60000ms exceeded.
+   🎯 Found visible button 2: ''
+   📋 Button HTML: 
+          <i class="zmdi zmdi-more-vert f20"></i>
+        ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ⚠️ Failed to click element 10: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 11: ''
+   📋 Button HTML: <i class="fa fa-undo"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 11: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Trying selector 17: button:has-text("Run")
+   📊 Found 0 elements for selector: button:has-text("Run")
+   🎯 Trying selector 18: button:has-text("Search")
+   📊 Found 0 elements for selector: button:has-text("Search")
+   🎯 Trying selector 19: button:has-text("Calculate")
+   📊 Found 0 elements for selector: button:has-text("Calculate")
+   🎯 Trying selector 20: button:has-text("Go")
+   📊 Found 0 elements for selector: button:has-text("Go")
+   ❌ NO GREEN BUTTON FOUND - Will extract cached results
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   ⚠️ Failed to click element 2: Timeout 60000ms exceeded.
+   🎯 Found visible button 3: ''
+   📋 Button HTML: 
+                <i class="zmdi zmdi-save"></i>
+              ...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   📊 Extracting results (should be fresh if green button was clicked)...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ SUCCESSFULLY CLICKED GREEN BUTTON!
+   ⏳ Waiting for fresh affordability calculation...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Accord: £134,700
+   💰 Newcastle: £134,700
+   💰 Gen H: £134,700
+   💰 Leeds: £134,700
+   💰 Nottingham: £134,700
+   💰 HSBC: £134,700
+   💰 Nationwide: £134,700
+   💰 Skipton: £134,500
+   💰 Santander: £133,500
+   💰 Clydesdale: £132,700
+   💰 Kensington: £120,000
+   💰 Metro: £119,334
+   💰 Precise: £142,400
+   💰 Halifax: £134,700
+   💰 Barclays: £134,700
+   💰 Principality: £130,983
+   💰 Coventry: £117,900
+   ✅ Successfully extracted 17 target lenders
+   ✅ Successfully extracted 17 lender results from table:
+      💰 Accord: £134,700
+      💰 Newcastle: £134,700
+      💰 Gen H: £134,700
+      💰 Leeds: £134,700
+      💰 Nottingham: £134,700
+      💰 HSBC: £134,700
+      💰 Nationwide: £134,700
+      💰 Skipton: £134,500
+      💰 Santander: £133,500
+      💰 Clydesdale: £132,700
+      💰 Kensington: £120,000
+      💰 Metro: £119,334
+      💰 Precise: £142,400
+      💰 Halifax: £134,700
+      💰 Barclays: £134,700
+      💰 Principality: £130,983
+      💰 Coventry: £117,900
+   ✅ Results extracted!
+   📊 Processing result for scenario_1_single_employed_30k
+   📋 Raw lenders data: {'Accord': 134700, 'Newcastle': 134700, 'Gen H': 134700, 'Leeds': 134700, 'Nottingham': 134700, 'HSBC': 134700, 'Nationwide': 134700, 'Skipton': 134500, 'Santander': 133500, 'Clydesdale': 132700, 'Kensington': 120000, 'Metro': 119334, 'Precise': 142400, 'Halifax': 134700, 'Barclays': 134700, 'Principality': 130983, 'Coventry': 117900}
+   💰 Processed amounts: {'Accord': 134700, 'Newcastle': 134700, 'Gen H': 134700, 'Leeds': 134700, 'Nottingham': 134700, 'HSBC': 134700, 'Nationwide': 134700, 'Skipton': 134500, 'Santander': 133500, 'Clydesdale': 132700, 'Kensington': 120000, 'Metro': 119334, 'Precise': 142400, 'Halifax': 134700, 'Barclays': 134700, 'Principality': 130983, 'Coventry': 117900}
+✅ Scenario 1 completed: 17 lenders found
+🎉 Real automation completed: 1 scenarios
+   ⚠️ Failed to click element 3: Timeout 60000ms exceeded.
+   🎯 Found visible button 4: ''
+   📋 Button HTML: <i class="fa fa-bold"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 4: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 5: ''
+   📋 Button HTML: <i class="fa fa-italic"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 5: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 6: ''
+   📋 Button HTML: <i class="fa fa-underline"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 6: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 7: ''
+   📋 Button HTML: <i class="fa fa-strikethrough"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 7: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+   🎯 Found visible button 8: ''
+   📋 Button HTML: <i class="fa fa-list-ul"></i>...
+   ⚡ CLICKING BUTTON: button[class*="btn"]
+   ⚠️ Failed to click element 8: ElementHandle.click: Target page, context or browser has been closed
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    6 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 500ms
+
+   ⚠️ Failed to click element 9: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 10: ElementHandle.is_visible: Target page, context or browser has been closed
+   ⚠️ Failed to click element 11: ElementHandle.is_visible: Target page, context or browser has been closed
+   🎯 Trying selector 17: button:has-text("Run")
+   ⚠️ Error with selector button:has-text("Run"): Page.query_selector_all: Target page, context or browser has been closed
+   🎯 Trying selector 18: button:has-text("Search")
+   ⚠️ Error with selector button:has-text("Search"): Page.query_selector_all: Target page, context or browser has been closed
+   🎯 Trying selector 19: button:has-text("Calculate")
+   ⚠️ Error with selector button:has-text("Calculate"): Page.query_selector_all: Target page, context or browser has been closed
+   🎯 Trying selector 20: button:has-text("Go")
+   ⚠️ Error with selector button:has-text("Go"): Page.query_selector_all: Target page, context or browser has been closed
+   ❌ NO GREEN BUTTON FOUND - Will extract cached results
+   ❌ Critical error searching for green button: Page.screenshot: Target page, context or browser has been closed
+   ❌ GREEN BUTTON NOT FOUND - This will extract old cached results!
+   ❌ Error in search and extract: Page.wait_for_timeout: Target page, context or browser has been closed
+   📊 Processing result for scenario_1_single_employed_30k
+   📋 Raw lenders data: {}
+   ⚠️ No lender data for scenario_1_single_employed_30k, but scenario completed
+   💰 Processed amounts: {}
+   ⚠️ No amounts extracted, using demo calculation
+✅ Scenario 1 completed: 0 lenders found
+🎉 Real automation completed: 1 scenarios
+INFO:     127.0.0.1:61911 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61911 - "GET /api/latest-results HTTP/1.1" 200 OK

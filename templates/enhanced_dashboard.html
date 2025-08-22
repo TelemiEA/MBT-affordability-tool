@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced MBT Affordability Benchmarking Tool</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .btn-success {
+            background: #48bb78;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .btn-warning {
+            background: #ed8936;
+        }
+
+        .btn-warning:hover {
+            background: #dd6b20;
+        }
+
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .status.loading {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            border: 1px solid #90cdf4;
+        }
+
+        .status.success {
+            background: #f0fff4;
+            color: #276749;
+            border: 1px solid #9ae6b4;
+        }
+
+        .status.error {
+            background: #fed7d7;
+            color: #c53030;
+            border: 1px solid #fc8181;
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border: none;
+            background: #f7fafc;
+            color: #4a5568;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            flex: 1;
+            text-align: center;
+        }
+
+        .tab.active {
+            background: white;
+            color: #2d3748;
+            border-bottom: 3px solid #4299e1;
+        }
+
+        .tab:first-child {
+            border-radius: 12px 0 0 0;
+        }
+
+        .tab:last-child {
+            border-radius: 0 12px 0 0;
+        }
+
+        .tab-content {
+            background: white;
+            border-radius: 0 0 12px 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .tab-pane {
+            display: none;
+            padding: 2rem;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .results-header {
+            background: #2d3748;
+            color: white;
+            padding: 1.5rem;
+            margin: 0;
+        }
+
+        .results-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-card {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 2rem;
+        }
+
+        .scenario-card:last-child {
+            border-bottom: none;
+        }
+
+        .scenario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .scenario-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .scenario-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+
+        .rank-badge {
+            background: #4299e1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .rank-1 { background: #48bb78; }
+        .rank-2 { background: #ed8936; }
+        .rank-3 { background: #ed8936; }
+
+        .lenders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .lender-card {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .lender-card.gen-h {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+
+        .lender-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .lender-amount {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        /* Rank Changes Grid Styling */
+        .scenario-rank-changes {
+            margin-top: 3rem;
+        }
+
+        .rank-changes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .rank-changes-grid .chart-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .rank-changes-grid .chart-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .timestamp {
+            color: #718096;
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .summary-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card p {
+            color: #718096;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Enhanced MBT Affordability Benchmarking</h1>
+            <p>32 scenarios • Joint applicants • Historical tracking • Trend analysis • Real-time automation</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <button id="runSamplesBtn" class="btn">
+                    <span class="loading-spinner hidden" id="loadingSpinner"></span>
+                    Run Sample Test (Quick)
+                </button>
+                <button id="runFullBtn" class="btn btn-success">
+                    <span class="loading-spinner hidden" id="loadingSpinnerFull"></span>
+                    Run All 64 Scenarios (Full)
+                </button>
+                <button id="runCreditBtn" class="btn btn-primary">
+                    <span class="loading-spinner hidden" id="loadingSpinnerCredit"></span>
+                    💳 Run Credit Scenarios Only (32)
+                </button>
+                <button id="loadLatestBtn" class="btn btn-secondary">Load Latest Results</button>
+                <button id="loadHistoryBtn" class="btn btn-warning">View Historical Trends</button>
+                <button id="refreshBtn" class="btn btn-secondary">Refresh</button>
+            </div>
+            
+            <div class="control-group">
+                <strong>Export Data:</strong>
+                <button id="exportCsvBtn" class="btn btn-secondary">📄 Export CSV</button>
+                <button id="exportExcelBtn" class="btn btn-secondary">📊 Export Excel</button>
+                <button id="exportJsonBtn" class="btn btn-secondary">📋 Export JSON</button>
+            </div>
+            
+            <div id="statusMessage" class="status hidden"></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="results">Latest Results</button>
+            <button class="tab" data-tab="trends">Historical Trends</button>
+            <button class="tab" data-tab="analytics">Analytics</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Results Tab -->
+            <div id="results-tab" class="tab-pane active">
+                <div id="resultsContainer" class="hidden">
+                    <div class="results-header">
+                        <h2>Affordability Results</h2>
+                        <div id="resultsTimestamp" class="timestamp"></div>
+                    </div>
+                    <div id="resultsContent"></div>
+                </div>
+            </div>
+
+            <!-- Trends Tab -->
+            <div id="trends-tab" class="tab-pane">
+                <!-- Historical Summary Cards -->
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3 id="totalRuns">-</h3>
+                        <p>Total Automation Runs</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3 id="avgGenHRank">-</h3>
+                        <p>Average Gen H Rank</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3 id="bestScenario">-</h3>
+                        <p>Best Performing Scenario</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3 id="lastRun">-</h3>
+                        <p>Last Run</p>
+                    </div>
+                </div>
+
+                <!-- Time Series Charts -->
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <div class="chart-title">📈 Average Gen H Rank Over Time</div>
+                        <canvas id="genHRankOverTimeChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">📊 Gen H vs Average Lender Gap Over Time</div>
+                        <canvas id="genHGapOverTimeChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Rank Change Charts Grid -->
+                <div class="scenario-rank-changes">
+                    <h3 style="text-align: center; color: #2d3748; margin: 2rem 0 1rem 0;">📊 Rank Changes Since Last Run</h3>
+                    <div class="rank-changes-grid">
+                        <div class="chart-container">
+                            <div class="chart-title">👤 Sole Employed</div>
+                            <canvas id="soleEmployedRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👤 Sole Self-Employed</div>
+                            <canvas id="soleSelfEmployedRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👥 Joint Employed</div>
+                            <canvas id="jointEmployedRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👥 Joint Self-Employed</div>
+                            <canvas id="jointSelfEmployedRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👤💳 Sole Employed + Credit</div>
+                            <canvas id="soleEmployedCreditRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👤💳 Sole Self-Employed + Credit</div>
+                            <canvas id="soleSelfEmployedCreditRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👥💳 Joint Employed + Credit</div>
+                            <canvas id="jointEmployedCreditRankChange" width="300" height="150"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">👥💳 Joint Self-Employed + Credit</div>
+                            <canvas id="jointSelfEmployedCreditRankChange" width="300" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div id="analytics-tab" class="tab-pane">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <div class="chart-title">Income vs Affordability Trends</div>
+                        <canvas id="incomeAffordabilityChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Employment Type Analysis</div>
+                        <canvas id="employmentAnalysisChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class EnhancedAffordabilityDashboard {
+            constructor() {
+                this.charts = {};
+                this.initializeEventListeners();
+                this.loadLatestResultsSilently();
+            }
+
+            initializeEventListeners() {
+                document.getElementById('runSamplesBtn').addEventListener('click', () => this.runSampleScenarios());
+                document.getElementById('runFullBtn').addEventListener('click', () => this.runFullAutomation());
+                document.getElementById('runCreditBtn').addEventListener('click', () => this.runCreditScenarios());
+                document.getElementById('loadLatestBtn').addEventListener('click', () => this.loadLatestResults());
+                document.getElementById('loadHistoryBtn').addEventListener('click', () => this.loadHistoricalData());
+                document.getElementById('refreshBtn').addEventListener('click', () => this.refreshData());
+                
+                // Export button listeners
+                document.getElementById('exportCsvBtn').addEventListener('click', () => this.exportData('csv'));
+                document.getElementById('exportExcelBtn').addEventListener('click', () => this.exportData('excel'));
+                document.getElementById('exportJsonBtn').addEventListener('click', () => this.exportData('json'));
+
+                // Tab switching
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.addEventListener('click', () => this.switchTab(tab.dataset.tab));
+                });
+            }
+
+            switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.classList.toggle('active', tab.dataset.tab === tabName);
+                });
+
+                // Update tab content
+                document.querySelectorAll('.tab-pane').forEach(pane => {
+                    pane.classList.toggle('active', pane.id === `${tabName}-tab`);
+                });
+
+                // Load specific tab data
+                if (tabName === 'trends') {
+                    this.loadHistoricalData();
+                } else if (tabName === 'analytics') {
+                    this.loadAnalytics();
+                }
+            }
+
+            showStatus(message, type = 'loading') {
+                const statusEl = document.getElementById('statusMessage');
+                statusEl.textContent = message;
+                statusEl.className = `status ${type}`;
+                statusEl.classList.remove('hidden');
+            }
+
+            hideStatus() {
+                document.getElementById('statusMessage').classList.add('hidden');
+            }
+
+            setButtonLoading(buttonId, loading) {
+                const button = document.getElementById(buttonId);
+                let spinnerId = 'loadingSpinner';
+                if (buttonId === 'runFullBtn') {
+                    spinnerId = 'loadingSpinnerFull';
+                } else if (buttonId === 'runCreditBtn') {
+                    spinnerId = 'loadingSpinnerCredit';
+                }
+                const spinner = document.getElementById(spinnerId);
+                
+                if (loading) {
+                    button.disabled = true;
+                    if (spinner) spinner.classList.remove('hidden');
+                } else {
+                    button.disabled = false;
+                    if (spinner) spinner.classList.add('hidden');
+                }
+            }
+
+            async runSampleScenarios() {
+                this.setButtonLoading('runSamplesBtn', true);
+                this.showStatus('Running sample scenario with real MBT automation...', 'loading');
+
+                try {
+                    const response = await fetch('/api/run-sample-scenarios');
+                    const data = await response.json();
+
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    this.showStatus('✅ Sample scenario completed successfully!', 'success');
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 5000);
+                } catch (error) {
+                    this.showStatus(`Error: ${error.message}`, 'error');
+                } finally {
+                    this.setButtonLoading('runSamplesBtn', false);
+                }
+            }
+
+            async runFullAutomation() {
+                this.setButtonLoading('runFullBtn', true);
+                this.showStatus('Running ALL 32 scenarios... This will take 15-25 minutes.', 'loading');
+
+                try {
+                    const response = await fetch('/api/run-full-automation');
+                    const data = await response.json();
+
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    this.showStatus(`✅ Full automation completed! ${data.summary?.successful_scenarios || 0} scenarios successful.`, 'success');
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 3000);
+                } catch (error) {
+                    this.showStatus(`Full automation error: ${error.message}`, 'error');
+                } finally {
+                    this.setButtonLoading('runFullBtn', false);
+                }
+            }
+
+            async runCreditScenarios() {
+                this.setButtonLoading('runCreditBtn', true);
+                this.showStatus('Running CREDIT COMMITMENT scenarios only (32)... This will take 8-12 minutes.', 'loading');
+
+                try {
+                    const response = await fetch('/api/run-credit-scenarios');
+                    const data = await response.json();
+
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    this.showStatus(`💳 Credit scenarios completed! ${data.successful_scenarios || 0}/${data.total_scenarios || 32} scenarios successful.`, 'success');
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 3000);
+                } catch (error) {
+                    this.showStatus(`Credit scenarios error: ${error.message}`, 'error');
+                } finally {
+                    this.setButtonLoading('runCreditBtn', false);
+                }
+            }
+
+            async loadLatestResultsSilently() {
+                try {
+                    const response = await fetch('/api/latest-results');
+                    const data = await response.json();
+
+                    if (data && data.results && Object.keys(data.results).length > 0) {
+                        this.displayResults(data);
+                    }
+                    // Silently fail if no data - don't show error on startup
+                } catch (error) {
+                    // Silently fail on startup - user hasn't requested anything yet
+                    console.log('No existing results found on startup');
+                }
+            }
+
+            async loadLatestResults() {
+                this.showStatus('Loading latest results...', 'loading');
+
+                try {
+                    const response = await fetch('/api/latest-results');
+                    const data = await response.json();
+
+                    if (Object.keys(data).length === 0 || data.message) {
+                        this.showStatus('No results found. Run some scenarios first.', 'error');
+                        return;
+                    }
+
+                    this.showStatus('Latest results loaded successfully!', 'success');
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 2000);
+                } catch (error) {
+                    this.showStatus(`Error loading results: ${error.message}`, 'error');
+                }
+            }
+
+            async loadHistoricalData() {
+                try {
+                    this.showStatus('Loading historical data...', 'loading');
+                    
+                    // Load historical summary
+                    await this.loadHistoricalSummary();
+                    
+                    // Load time series charts
+                    await this.loadGenHRankOverTime();
+                    await this.loadGenHGapOverTime();
+                    
+                    // Load rank changes
+                    await this.loadScenarioRankChanges();
+                    
+                    this.showStatus('✅ Historical data loaded successfully', 'success');
+                    setTimeout(() => this.hideStatus(), 3000);
+                    
+                } catch (error) {
+                    console.error('Error loading historical data:', error);
+                    this.showStatus('⚠️ Historical data unavailable - run some scenarios to build history', 'error');
+                    setTimeout(() => this.hideStatus(), 5000);
+                }
+            }
+
+            async loadHistoricalSummary() {
+                try {
+                    const response = await fetch('/api/historical-summary');
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    
+                    // Update summary cards
+                    document.getElementById('totalRuns').textContent = data.total_runs || '0';
+                    document.getElementById('avgGenHRank').textContent = data.average_gen_h_rank || '-';
+                    document.getElementById('bestScenario').textContent = data.best_performing_scenario || '-';
+                    
+                    // Format last run date
+                    if (data.last_run && data.last_run !== 'No runs') {
+                        const lastRunDate = new Date(data.last_run);
+                        document.getElementById('lastRun').textContent = lastRunDate.toLocaleDateString();
+                    } else {
+                        document.getElementById('lastRun').textContent = '-';
+                    }
+                    
+                } catch (error) {
+                    console.error('Error loading historical summary:', error);
+                    // Set default values on error
+                    document.getElementById('totalRuns').textContent = '0';
+                    document.getElementById('avgGenHRank').textContent = '-';
+                    document.getElementById('bestScenario').textContent = '-';
+                    document.getElementById('lastRun').textContent = '-';
+                }
+            }
+
+            async loadGenHRankOverTime() {
+                try {
+                    const response = await fetch('/api/historical-gen-h-rank');
+                    const result = await response.json();
+                    
+                    if (result.error) {
+                        throw new Error(result.error);
+                    }
+                    
+                    const data = result.data || [];
+                    this.createGenHRankChart(data);
+                    
+                } catch (error) {
+                    console.error('Error loading Gen H rank over time:', error);
+                    this.createEmptyChart('genHRankOverTimeChart', 'No historical rank data available');
+                }
+            }
+
+            async loadGenHGapOverTime() {
+                try {
+                    const response = await fetch('/api/historical-gen-h-gap');
+                    const result = await response.json();
+                    
+                    if (result.error) {
+                        throw new Error(result.error);
+                    }
+                    
+                    const data = result.data || [];
+                    this.createGenHGapChart(data);
+                    
+                } catch (error) {
+                    console.error('Error loading Gen H gap over time:', error);
+                    this.createEmptyChart('genHGapOverTimeChart', 'No historical gap data available');
+                }
+            }
+
+            async loadScenarioRankChanges() {
+                try {
+                    const response = await fetch('/api/scenario-rank-changes');
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    
+                    this.createRankChangeCharts(data);
+                    
+                } catch (error) {
+                    console.error('Error loading scenario rank changes:', error);
+                    this.createEmptyRankChangeCharts();
+                }
+            }
+
+            async loadAnalytics() {
+                try {
+                    // Try to load real analytics data
+                    const response = await fetch('/api/analytics-data');
+                    if (response.ok) {
+                        const analyticsData = await response.json();
+                        if (analyticsData.error) {
+                            this.createEmptyAnalyticsCharts();
+                        } else {
+                            this.createAnalyticsChartsWithData(analyticsData);
+                        }
+                    } else {
+                        this.createEmptyAnalyticsCharts();
+                    }
+                } catch (error) {
+                    console.error('Error loading analytics:', error);
+                    this.createEmptyAnalyticsCharts();
+                }
+            }
+
+            async refreshData() {
+                await this.loadLatestResults();
+                if (document.querySelector('.tab[data-tab="trends"]').classList.contains('active')) {
+                    await this.loadHistoricalData();
+                }
+            }
+
+            async exportData(format) {
+                this.showStatus(`Exporting data as ${format.toUpperCase()}...`, 'loading');
+                
+                try {
+                    const response = await fetch(`/api/export-data/${format}`);
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.showStatus(`✅ Data exported successfully: ${result.filename}`, 'success');
+                        setTimeout(() => this.hideStatus(), 5000);
+                    } else {
+                        throw new Error(result.error || 'Export failed');
+                    }
+                } catch (error) {
+                    this.showStatus(`Export error: ${error.message}`, 'error');
+                }
+            }
+
+            displayResults(data) {
+                const container = document.getElementById('resultsContainer');
+                const content = document.getElementById('resultsContent');
+                const timestamp = document.getElementById('resultsTimestamp');
+
+                if (!data.results || Object.keys(data.results).length === 0) {
+                    content.innerHTML = '<div style="padding: 2rem; text-align: center; color: #718096;">No results to display</div>';
+                    container.classList.remove('hidden');
+                    return;
+                }
+
+                // Set timestamp
+                if (data.timestamp) {
+                    const date = new Date(data.timestamp);
+                    timestamp.textContent = `Last updated: ${date.toLocaleString()}`;
+                }
+
+                // Generate HTML for results
+                let html = '';
+                
+                // Show summary statistics if available
+                if (data.summary_statistics) {
+                    const stats = data.summary_statistics;
+                    html += `
+                        <div class="scenario-card" style="background: #f0fff4; border-left: 4px solid #48bb78;">
+                            <h3 style="color: #276749; margin-bottom: 1rem;">Summary Statistics</h3>
+                            <div class="scenario-stats">
+                                <div class="stat">
+                                    <div class="stat-value">${stats.average_gen_h_rank}</div>
+                                    <div class="stat-label">Average Gen H Rank</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: #48bb78;">${stats.rank_percentages.rank_1_percent}%</div>
+                                    <div class="stat-label">Ranked 1st</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: #ed8936;">${stats.rank_percentages.rank_2_percent}%</div>
+                                    <div class="stat-label">Ranked 2nd</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: #ed8936;">${stats.rank_percentages.rank_3_percent}%</div>
+                                    <div class="stat-label">Ranked 3rd</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: #4299e1;">${stats.top_3_percent}%</div>
+                                    <div class="stat-label">Top 3 Overall</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Show automation summary if available
+                if (data.summary) {
+                    html += `
+                        <div class="scenario-card" style="background: #ebf8ff; border-left: 4px solid #4299e1;">
+                            <h3 style="color: #2b6cb0; margin-bottom: 1rem;">Automation Summary</h3>
+                            <div class="scenario-stats">
+                                <div class="stat">
+                                    <div class="stat-value">${data.summary.total_scenarios}</div>
+                                    <div class="stat-label">Total Scenarios</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: #48bb78;">${data.summary.successful_scenarios}</div>
+                                    <div class="stat-label">Successful</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: #f56565;">${data.summary.failed_scenarios || 0}</div>
+                                    <div class="stat-label">Failed</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">${Math.round((data.summary.successful_scenarios / data.summary.total_scenarios) * 100)}%</div>
+                                    <div class="stat-label">Success Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Display grouped results if available
+                if (data.grouped_results && data.group_headers) {
+                    const groupOrder = [
+                        'sole_employed', 'sole_self_employed', 'joint_employed', 'joint_self_employed',
+                        'sole_employed_credit', 'sole_self_employed_credit', 'joint_employed_credit', 'joint_self_employed_credit'
+                    ];
+                    
+                    groupOrder.forEach(groupKey => {
+                        const groupData = data.grouped_results[groupKey];
+                        const groupHeader = data.group_headers[groupKey];
+                        
+                        if (groupData && Object.keys(groupData).length > 0) {
+                            // Add group header with improved styling
+                            const groupColors = {
+                                'sole_employed': '#4299e1',
+                                'sole_self_employed': '#48bb78', 
+                                'joint_employed': '#ed8936',
+                                'joint_self_employed': '#9f7aea',
+                                'sole_employed_credit': '#1e40af',
+                                'sole_self_employed_credit': '#166534',
+                                'joint_employed_credit': '#c2410c',
+                                'joint_self_employed_credit': '#7c3aed'
+                            };
+                            const bgColor = groupColors[groupKey] || '#2d3748';
+                            
+                            html += `
+                                <div class="scenario-card" style="background: ${bgColor}; color: white; margin-top: 3rem; margin-bottom: 1rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                                    <h2 style="color: white; margin: 0; font-size: 1.75rem; font-weight: 700; text-align: center;">${groupHeader}</h2>
+                                    <p style="color: rgba(255,255,255,0.8); margin: 0.5rem 0 0 0; font-size: 1rem; text-align: center; font-weight: 500;">${Object.keys(groupData).length} scenarios • Ordered by income level</p>
+                                </div>
+                            `;
+                            
+                            // Add scenarios in this group
+                            Object.entries(groupData).forEach(([scenarioId, scenarioData]) => {
+                                html += this.generateScenarioHTML(scenarioId, scenarioData);
+                            });
+                        }
+                    });
+                } else {
+                    // Fallback to ungrouped display
+                    Object.entries(data.results).forEach(([scenarioId, scenarioData]) => {
+                        html += this.generateScenarioHTML(scenarioId, scenarioData);
+                    });
+                }
+
+                content.innerHTML = html;
+                container.classList.remove('hidden');
+            }
+
+            generateScenarioHTML(scenarioId, scenarioData) {
+                const stats = scenarioData.statistics || {};
+                const lenderResults = scenarioData.lender_results || {};
+                const lenderCount = Object.keys(lenderResults).length;
+                
+                // Determine success status
+                const isSuccess = lenderCount >= 10 && stats.gen_h_amount > 0;
+                const statusIcon = isSuccess ? '✅' : '❌';
+                const statusText = isSuccess ? 'SUCCESS' : 'FAILED';
+                const statusColor = isSuccess ? '#48bb78' : '#f56565';
+                const cardBorder = isSuccess ? 'border-left: 4px solid #48bb78;' : 'border-left: 4px solid #f56565;';
+                
+                return `
+                    <div class="scenario-card" style="${cardBorder}">
+                        <div class="scenario-header">
+                            <div class="scenario-title">
+                                ${statusIcon} ${scenarioData.description || scenarioId}
+                                <span style="font-size: 0.75rem; color: ${statusColor}; font-weight: 600; margin-left: 0.5rem;">${statusText}</span>
+                            </div>
+                            <div class="rank-badge rank-${stats.gen_h_rank || 0}">Rank #${stats.gen_h_rank || 'N/A'}</div>
+                        </div>
+                        
+                        <div class="scenario-stats">
+                            <div class="stat">
+                                <div class="stat-value">£${this.formatCurrency(stats.average || 0)}</div>
+                                <div class="stat-label">Market Average</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">£${this.formatCurrency(stats.gen_h_amount || 0)}</div>
+                                <div class="stat-label">Gen H Amount</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value" style="color: ${(stats.gen_h_difference || 0) >= 0 ? '#48bb78' : '#f56565'}">
+                                    ${(stats.gen_h_difference || 0) >= 0 ? '+' : ''}£${this.formatCurrency(Math.abs(stats.gen_h_difference || 0))}
+                                </div>
+                                <div class="stat-label">Gen H vs Average</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">${Object.keys(lenderResults).length}</div>
+                                <div class="stat-label">Lenders Found</div>
+                            </div>
+                        </div>
+                        
+                        <div class="lenders-grid">
+                            ${this.generateLendersHTML(lenderResults)}
+                        </div>
+                    </div>
+                `;
+            }
+
+            generateLendersHTML(lenderResults) {
+                const targetLenders = ["Gen H", "Accord", "Skipton", "Kensington", "Precise", "Atom",
+                    "Clydesdale", "Newcastle", "Metro", "Nottingham", "Leeds", "Halifax", "HSBC",
+                    "Principality", "Coventry", "Santander", "Barclays", "Nationwide"];
+
+                return targetLenders.map(lender => {
+                    const amount = lenderResults[lender];
+                    const isGenH = lender === 'Gen H';
+                    
+                    if (amount === undefined) {
+                        return `
+                            <div class="lender-card" style="opacity: 0.5;">
+                                <div class="lender-name">${lender}</div>
+                                <div class="lender-amount" style="color: #a0aec0;">Not found</div>
+                            </div>
+                        `;
+                    }
+                    
+                    return `
+                        <div class="lender-card ${isGenH ? 'gen-h' : ''}">
+                            <div class="lender-name">${lender}</div>
+                            <div class="lender-amount">£${this.formatCurrency(amount)}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            async createTrendCharts() {
+                try {
+                    // Fetch real historical data from the database
+                    const historicalResponse = await fetch('/api/historical-summary');
+                    
+                    if (historicalResponse.ok) {
+                        const historicalData = await historicalResponse.json();
+                        this.createChartsWithRealData(historicalData);
+                    } else {
+                        this.createEmptyCharts();
+                    }
+                } catch (error) {
+                    console.log('No historical data available yet, showing empty charts');
+                    this.createEmptyCharts();
+                }
+            }
+
+            createEmptyCharts() {
+                // Gen H Rank Trend Chart - Empty until we have data
+                if (this.charts.rankTrend) this.charts.rankTrend.destroy();
+                const rankCtx = document.getElementById('rankTrendChart').getContext('2d');
+                this.charts.rankTrend = new Chart(rankCtx, {
+                    type: 'line',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            label: 'Gen H Average Rank',
+                            data: [],
+                            borderColor: '#4299e1',
+                            backgroundColor: 'rgba(66, 153, 225, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'No historical data yet - run automation to see trends'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                reverse: true,
+                                title: {
+                                    display: true,
+                                    text: 'Rank Position'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Performance Chart - Empty until we have data
+                if (this.charts.performance) this.charts.performance.destroy();
+                const perfCtx = document.getElementById('performanceChart').getContext('2d');
+                this.charts.performance = new Chart(perfCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [],
+                        datasets: [
+                            {
+                                label: 'Gen H',
+                                data: [],
+                                backgroundColor: '#4299e1'
+                            },
+                            {
+                                label: 'Market Average',
+                                data: [],
+                                backgroundColor: '#e2e8f0'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'No historical data yet - run automation to see performance comparison'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Amount (£)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            createChartsWithRealData(data) {
+                // Create charts with actual historical data when available
+                // This will be populated as we collect more runs over time
+                
+                // For now, create empty charts with real structure
+                this.createEmptyCharts();
+            }
+
+            createEmptyAnalyticsCharts() {
+                // Income vs Affordability Chart - Empty until we have data
+                if (this.charts.incomeAffordability) this.charts.incomeAffordability.destroy();
+                const incomeCtx = document.getElementById('incomeAffordabilityChart').getContext('2d');
+                this.charts.incomeAffordability = new Chart(incomeCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: 'Gen H Affordability',
+                            data: [],
+                            borderColor: '#4299e1',
+                            backgroundColor: '#4299e1'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'No data yet - run automation to see income vs affordability trends'
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Annual Income (£)'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Max Affordability (£)'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Employment Type Analysis Chart - Empty until we have data
+                if (this.charts.employmentAnalysis) this.charts.employmentAnalysis.destroy();
+                const empCtx = document.getElementById('employmentAnalysisChart').getContext('2d');
+                this.charts.employmentAnalysis = new Chart(empCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            data: [],
+                            backgroundColor: ['#4299e1', '#48bb78', '#ed8936', '#f56565']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'No data yet - run automation to see employment type analysis'
+                            }
+                        }
+                    }
+                });
+            }
+
+            createAnalyticsChartsWithData(analyticsData) {
+                // Income vs Affordability Chart with real data
+                if (this.charts.incomeAffordability) this.charts.incomeAffordability.destroy();
+                const incomeCtx = document.getElementById('incomeAffordabilityChart').getContext('2d');
+                
+                const incomeData = analyticsData.income_affordability || [];
+                const soleData = incomeData.filter(d => d.scenario_type === 'sole').map(d => ({x: d.income, y: d.affordability}));
+                const jointData = incomeData.filter(d => d.scenario_type === 'joint').map(d => ({x: d.income, y: d.affordability}));
+                
+                this.charts.incomeAffordability = new Chart(incomeCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [
+                            {
+                                label: 'Sole Applicants',
+                                data: soleData,
+                                borderColor: '#4299e1',
+                                backgroundColor: '#4299e1'
+                            },
+                            {
+                                label: 'Joint Applicants', 
+                                data: jointData,
+                                borderColor: '#48bb78',
+                                backgroundColor: '#48bb78'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: `Income vs Affordability Analysis (${analyticsData.total_scenarios_analyzed} scenarios)`
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Annual Income (£)'
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return '£' + (value/1000) + 'k';
+                                    }
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Max Affordability (£)'
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return '£' + (value/1000) + 'k';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Employment Type Analysis Chart with real data
+                if (this.charts.employmentAnalysis) this.charts.employmentAnalysis.destroy();
+                const empCtx = document.getElementById('employmentAnalysisChart').getContext('2d');
+                
+                const employmentData = analyticsData.employment_type_distribution || {};
+                const labels = Object.keys(employmentData);
+                const values = Object.values(employmentData);
+                
+                this.charts.employmentAnalysis = new Chart(empCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: values,
+                            backgroundColor: ['#4299e1', '#48bb78', '#ed8936', '#f56565']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Employment Type Distribution'
+                            }
+                        }
+                    }
+                });
+            }
+
+            async exportData(format) {
+                try {
+                    this.showStatus(`Exporting data as ${format.toUpperCase()}...`, 'loading');
+                    
+                    const response = await fetch(`/api/export-data/${format}`);
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        this.showStatus(`✅ Export successful! File: ${result.filename}`, 'success');
+                        console.log('Export details:', result);
+                    } else {
+                        throw new Error(result.error || 'Export failed');
+                    }
+                    
+                    setTimeout(() => this.hideStatus(), 5000);
+                } catch (error) {
+                    console.error('Export error:', error);
+                    this.showStatus(`❌ Export failed: ${error.message}`, 'error');
+                    setTimeout(() => this.hideStatus(), 5000);
+                }
+            }
+
+            // Historical Chart Creation Functions
+            createGenHRankChart(data) {
+                if (this.charts.genHRankOverTime) this.charts.genHRankOverTime.destroy();
+                const ctx = document.getElementById('genHRankOverTimeChart').getContext('2d');
+                
+                if (!data || data.length === 0) {
+                    this.createEmptyChart('genHRankOverTimeChart', 'No historical rank data available');
+                    return;
+                }
+                
+                const chartData = data.map(item => ({
+                    x: new Date(item.run_timestamp),
+                    y: item.average_gen_h_rank
+                }));
+                
+                this.charts.genHRankOverTime = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            label: 'Average Gen H Rank',
+                            data: chartData,
+                            borderColor: '#4299e1',
+                            backgroundColor: 'rgba(66, 153, 225, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Gen H Rank Over Time'
+                            },
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Average Rank'
+                                },
+                                reverse: true,
+                                min: 1
+                            }
+                        }
+                    }
+                });
+            }
+
+            createGenHGapChart(data) {
+                if (this.charts.genHGapOverTime) this.charts.genHGapOverTime.destroy();
+                const ctx = document.getElementById('genHGapOverTimeChart').getContext('2d');
+                
+                if (!data || data.length === 0) {
+                    this.createEmptyChart('genHGapOverTimeChart', 'No historical gap data available');
+                    return;
+                }
+                
+                const chartData = data.map(item => ({
+                    x: new Date(item.run_timestamp),
+                    y: item.average_gap
+                }));
+                
+                this.charts.genHGapOverTime = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            label: 'Gen H vs Average Gap (£)',
+                            data: chartData,
+                            borderColor: '#48bb78',
+                            backgroundColor: 'rgba(72, 187, 120, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Gen H vs Average Lender Gap Over Time'
+                            },
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Gap Amount (£)'
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return '£' + (value/1000).toFixed(1) + 'k';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            createRankChangeCharts(data) {
+                const scenarioMappings = {
+                    'sole_employed': 'soleEmployedRankChange',
+                    'sole_employed_credit': 'soleEmployedCreditRankChange', 
+                    'sole_self_employed': 'soleSelfEmployedRankChange',
+                    'sole_self_employed_credit': 'soleSelfEmployedCreditRankChange',
+                    'joint_employed': 'jointEmployedRankChange',
+                    'joint_employed_credit': 'jointEmployedCreditRankChange',
+                    'joint_self_employed': 'jointSelfEmployedRankChange',
+                    'joint_self_employed_credit': 'jointSelfEmployedCreditRankChange'
+                };
+                
+                if (!data || Object.keys(data).length === 0) {
+                    this.createEmptyRankChangeCharts();
+                    return;
+                }
+                
+                Object.keys(scenarioMappings).forEach(scenarioId => {
+                    const chartId = scenarioMappings[scenarioId];
+                    
+                    if (this.charts[chartId]) this.charts[chartId].destroy();
+                    
+                    const ctx = document.getElementById(chartId);
+                    if (!ctx) return;
+                    
+                    const scenarioData = data[scenarioId];
+                    let chartData, backgroundColor, borderColor;
+                    
+                    if (scenarioData && scenarioData.rank_change !== undefined) {
+                        const change = scenarioData.rank_change;
+                        const isImprovement = change < 0; // Lower rank is better
+                        
+                        chartData = [Math.abs(change)];
+                        backgroundColor = isImprovement ? 'rgba(72, 187, 120, 0.8)' : 'rgba(245, 101, 101, 0.8)';
+                        borderColor = isImprovement ? '#48bb78' : '#f56565';
+                    } else {
+                        chartData = [0];
+                        backgroundColor = 'rgba(113, 128, 150, 0.3)';
+                        borderColor = '#718096';
+                    }
+                    
+                    this.charts[chartId] = new Chart(ctx.getContext('2d'), {
+                        type: 'bar',
+                        data: {
+                            labels: ['Rank Change'],
+                            datasets: [{
+                                data: chartData,
+                                backgroundColor: backgroundColor,
+                                borderColor: borderColor,
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: this.formatScenarioTitle(scenarioId)
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 5,
+                                    title: {
+                                        display: true,
+                                        text: 'Rank Change'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            }
+
+            createEmptyChart(canvasId, message) {
+                const ctx = document.getElementById(canvasId);
+                if (!ctx) return;
+                
+                if (this.charts[canvasId]) this.charts[canvasId].destroy();
+                
+                this.charts[canvasId] = new Chart(ctx.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: [],
+                        datasets: []
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: message
+                            }
+                        }
+                    }
+                });
+            }
+
+            createEmptyRankChangeCharts() {
+                const scenarioMappings = {
+                    'sole_employed': 'soleEmployedRankChange',
+                    'sole_employed_credit': 'soleEmployedCreditRankChange', 
+                    'sole_self_employed': 'soleSelfEmployedRankChange',
+                    'sole_self_employed_credit': 'soleSelfEmployedCreditRankChange',
+                    'joint_employed': 'jointEmployedRankChange',
+                    'joint_employed_credit': 'jointEmployedCreditRankChange',
+                    'joint_self_employed': 'jointSelfEmployedRankChange',
+                    'joint_self_employed_credit': 'jointSelfEmployedCreditRankChange'
+                };
+                
+                Object.keys(scenarioMappings).forEach(scenarioId => {
+                    const chartId = scenarioMappings[scenarioId];
+                    
+                    const ctx = document.getElementById(chartId);
+                    if (!ctx) return;
+                    
+                    if (this.charts[chartId]) this.charts[chartId].destroy();
+                    
+                    this.charts[chartId] = new Chart(ctx.getContext('2d'), {
+                        type: 'bar',
+                        data: {
+                            labels: ['Rank Change'],
+                            datasets: [{
+                                data: [0],
+                                backgroundColor: 'rgba(113, 128, 150, 0.3)',
+                                borderColor: '#718096',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: this.formatScenarioTitle(scenarioId) + ' - Need 2+ runs'
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 5,
+                                    title: {
+                                        display: true,
+                                        text: 'Rank Change'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            }
+
+            formatScenarioTitle(scenarioId) {
+                const parts = scenarioId.split('_');
+                const applicantType = parts[0]; // sole or joint
+                const employmentType = parts[1] + (parts[2] ? '_' + parts[2] : ''); // employed or self_employed
+                const creditType = parts.includes('credit') ? ' (Credit)' : '';
+                
+                const formatted = `${applicantType.charAt(0).toUpperCase() + applicantType.slice(1)} ${
+                    employmentType.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())
+                }${creditType}`;
+                
+                return formatted;
+            }
+
+            // Historical Data Loading Functions
+            async loadHistoricalData() {
+                await Promise.all([
+                    this.loadHistoricalSummary(),
+                    this.loadGenHRankOverTime(), 
+                    this.loadGenHGapOverTime(),
+                    this.loadScenarioRankChanges()
+                ]);
+            }
+
+            async loadHistoricalSummary() {
+                try {
+                    const response = await fetch('/api/historical-summary');
+                    const result = await response.json();
+                    
+                    if (result.error) {
+                        throw new Error(result.error);
+                    }
+                    
+                    const data = result.data || {};
+                    this.updateHistoricalSummary(data);
+                    
+                } catch (error) {
+                    console.error('Error loading historical summary:', error);
+                    this.updateHistoricalSummary({});
+                }
+            }
+
+            async loadGenHRankOverTime() {
+                try {
+                    const response = await fetch('/api/historical-gen-h-rank');
+                    const result = await response.json();
+                    
+                    if (result.error) {
+                        throw new Error(result.error);
+                    }
+                    
+                    const data = result.data || [];
+                    this.createGenHRankChart(data);
+                    
+                } catch (error) {
+                    console.error('Error loading Gen H rank over time:', error);
+                    this.createEmptyChart('genHRankOverTimeChart', 'No historical rank data available');
+                }
+            }
+
+            async loadGenHGapOverTime() {
+                try {
+                    const response = await fetch('/api/historical-gen-h-gap');
+                    const result = await response.json();
+                    
+                    if (result.error) {
+                        throw new Error(result.error);
+                    }
+                    
+                    const data = result.data || [];
+                    this.createGenHGapChart(data);
+                    
+                } catch (error) {
+                    console.error('Error loading Gen H gap over time:', error);
+                    this.createEmptyChart('genHGapOverTimeChart', 'No historical gap data available');
+                }
+            }
+
+            async loadScenarioRankChanges() {
+                try {
+                    const response = await fetch('/api/scenario-rank-changes');
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    
+                    this.createRankChangeCharts(data);
+                    
+                } catch (error) {
+                    console.error('Error loading scenario rank changes:', error);
+                    this.createEmptyRankChangeCharts();
+                }
+            }
+
+            updateHistoricalSummary(data) {
+                const totalRuns = data.total_runs || 0;
+                const avgRank = data.average_gen_h_rank || 0;
+                const bestScenario = data.best_scenario || 'No data';
+                const lastRun = data.last_run_date ? new Date(data.last_run_date).toLocaleDateString() : 'Never';
+                
+                // Update individual summary elements
+                const totalRunsEl = document.getElementById('totalRuns');
+                const avgRankEl = document.getElementById('avgGenHRank');
+                const bestScenarioEl = document.getElementById('bestScenario');
+                const lastRunEl = document.getElementById('lastRun');
+                
+                if (totalRunsEl) totalRunsEl.textContent = totalRuns;
+                if (avgRankEl) avgRankEl.textContent = avgRank.toFixed(1);
+                if (bestScenarioEl) bestScenarioEl.textContent = bestScenario;
+                if (lastRunEl) lastRunEl.textContent = lastRun;
+            }
+
+            formatCurrency(amount) {
+                if (amount === 0) return '0';
+                return Math.round(amount).toLocaleString();
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new EnhancedAffordabilityDashboard();
+        });
+    </script>
+</body>
+</html>

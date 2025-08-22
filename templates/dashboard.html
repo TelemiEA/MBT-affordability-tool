@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBT Affordability Benchmarking Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .status.loading {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            border: 1px solid #90cdf4;
+        }
+
+        .status.success {
+            background: #f0fff4;
+            color: #276749;
+            border: 1px solid #9ae6b4;
+        }
+
+        .status.error {
+            background: #fed7d7;
+            color: #c53030;
+            border: 1px solid #fc8181;
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .results-header {
+            background: #2d3748;
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .results-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-card {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 2rem;
+        }
+
+        .scenario-card:last-child {
+            border-bottom: none;
+        }
+
+        .scenario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .scenario-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .scenario-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+
+        .rank-badge {
+            background: #4299e1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .rank-1 { background: #48bb78; }
+        .rank-2 { background: #ed8936; }
+        .rank-3 { background: #ed8936; }
+
+        .lenders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .lender-card {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .lender-card.gen-h {
+            border-color: #4299e1;
+            background: #ebf8ff;
+        }
+
+        .lender-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .lender-amount {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .timestamp {
+            color: #718096;
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MBT Affordability Benchmarking</h1>
+            <p>Automated mortgage lender comparison and benchmarking tool</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <button id="runSamplesBtn" class="btn">
+                    <span class="loading-spinner hidden" id="loadingSpinner"></span>
+                    Run Sample Scenarios (Demo + Login Test)
+                </button>
+                <button id="runFullBtn" class="btn" style="background: #e53e3e;">
+                    <span class="loading-spinner hidden" id="loadingSpinnerFull"></span>
+                    Run Full MBT Automation
+                </button>
+                <button id="loadLatestBtn" class="btn btn-secondary">Load Latest Results</button>
+                <button id="refreshBtn" class="btn btn-secondary">Refresh</button>
+            </div>
+            
+            <div id="statusMessage" class="status hidden"></div>
+        </div>
+
+        <div id="resultsContainer" class="results-container hidden">
+            <div class="results-header">
+                <h2>Affordability Results</h2>
+                <div id="resultsTimestamp" class="timestamp"></div>
+            </div>
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+
+    <script>
+        class AffordabilityDashboard {
+            constructor() {
+                this.initializeEventListeners();
+                this.loadLatestResults();
+            }
+
+            initializeEventListeners() {
+                document.getElementById('runSamplesBtn').addEventListener('click', () => this.runSampleScenarios());
+                document.getElementById('runFullBtn').addEventListener('click', () => this.runFullAutomation());
+                document.getElementById('loadLatestBtn').addEventListener('click', () => this.loadLatestResults());
+                document.getElementById('refreshBtn').addEventListener('click', () => this.refreshData());
+            }
+
+            showStatus(message, type = 'loading') {
+                const statusEl = document.getElementById('statusMessage');
+                statusEl.textContent = message;
+                statusEl.className = `status ${type}`;
+                statusEl.classList.remove('hidden');
+            }
+
+            hideStatus() {
+                document.getElementById('statusMessage').classList.add('hidden');
+            }
+
+            setButtonLoading(buttonId, loading) {
+                const button = document.getElementById(buttonId);
+                let spinnerId = 'loadingSpinner';
+                if (buttonId === 'runFullBtn') {
+                    spinnerId = 'loadingSpinnerFull';
+                }
+                const spinner = document.getElementById(spinnerId);
+                
+                if (loading) {
+                    button.disabled = true;
+                    if (spinner) spinner.classList.remove('hidden');
+                } else {
+                    button.disabled = false;
+                    if (spinner) spinner.classList.add('hidden');
+                }
+            }
+
+            async runSampleScenarios() {
+                this.setButtonLoading('runSamplesBtn', true);
+                this.showStatus('Testing MBT login and running demo scenarios...', 'loading');
+
+                try {
+                    const response = await fetch('/api/run-sample-scenarios');
+                    const data = await response.json();
+
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    if (data.status === 'demo_mode') {
+                        this.showStatus('✅ MBT Login successful! Showing demo data.', 'success');
+                    } else if (data.status === 'success') {
+                        this.showStatus('✅ Real MBT automation completed successfully!', 'success');
+                    } else {
+                        this.showStatus('Sample scenarios completed successfully!', 'success');
+                    }
+                    
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 5000);
+                } catch (error) {
+                    this.showStatus(`Error: ${error.message}`, 'error');
+                } finally {
+                    this.setButtonLoading('runSamplesBtn', false);
+                }
+            }
+
+            async runFullAutomation() {
+                this.setButtonLoading('runFullBtn', true);
+                this.showStatus('Running full MBT automation... This will take 5-10 minutes.', 'loading');
+
+                try {
+                    const response = await fetch('/api/run-full-automation');
+                    const data = await response.json();
+
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    this.showStatus('Full automation completed successfully!', 'success');
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 3000);
+                } catch (error) {
+                    this.showStatus(`Full automation error: ${error.message}`, 'error');
+                } finally {
+                    this.setButtonLoading('runFullBtn', false);
+                }
+            }
+
+            async loadLatestResults() {
+                this.showStatus('Loading latest results...', 'loading');
+
+                try {
+                    const response = await fetch('/api/latest-results');
+                    const data = await response.json();
+
+                    if (Object.keys(data).length === 0) {
+                        this.showStatus('No results found. Run some scenarios first.', 'error');
+                        return;
+                    }
+
+                    this.showStatus('Latest results loaded successfully!', 'success');
+                    this.displayResults(data);
+                    
+                    setTimeout(() => this.hideStatus(), 2000);
+                } catch (error) {
+                    this.showStatus(`Error loading results: ${error.message}`, 'error');
+                }
+            }
+
+            async refreshData() {
+                await this.loadLatestResults();
+            }
+
+            displayResults(data) {
+                const container = document.getElementById('resultsContainer');
+                const content = document.getElementById('resultsContent');
+                const timestamp = document.getElementById('resultsTimestamp');
+
+                if (!data.results || Object.keys(data.results).length === 0) {
+                    content.innerHTML = '<div style="padding: 2rem; text-align: center; color: #718096;">No results to display</div>';
+                    container.classList.remove('hidden');
+                    return;
+                }
+
+                // Set timestamp
+                if (data.timestamp) {
+                    const date = new Date(data.timestamp);
+                    timestamp.textContent = `Last updated: ${date.toLocaleString()}`;
+                }
+
+                // Generate HTML for results
+                let html = '';
+                
+                Object.entries(data.results).forEach(([scenarioId, scenarioData]) => {
+                    const stats = scenarioData.statistics || {};
+                    const lenderResults = scenarioData.lender_results || {};
+                    
+                    html += `
+                        <div class="scenario-card">
+                            <div class="scenario-header">
+                                <div class="scenario-title">${this.formatScenarioTitle(scenarioId)}</div>
+                                <div class="rank-badge rank-${stats.gen_h_rank || 0}">Rank #${stats.gen_h_rank || 'N/A'}</div>
+                            </div>
+                            
+                            <div class="scenario-stats">
+                                <div class="stat">
+                                    <div class="stat-value">£${this.formatCurrency(stats.average || 0)}</div>
+                                    <div class="stat-label">Average Borrowing</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value">£${this.formatCurrency(stats.gen_h_amount || 0)}</div>
+                                    <div class="stat-label">Gen H Amount</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-value" style="color: ${(stats.gen_h_difference || 0) >= 0 ? '#48bb78' : '#f56565'}">
+                                        ${(stats.gen_h_difference || 0) >= 0 ? '+' : ''}£${this.formatCurrency(Math.abs(stats.gen_h_difference || 0))}
+                                    </div>
+                                    <div class="stat-label">Gen H vs Average</div>
+                                </div>
+                            </div>
+                            
+                            <div class="lenders-grid">
+                                ${this.generateLendersHTML(lenderResults)}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                content.innerHTML = html;
+                container.classList.remove('hidden');
+            }
+
+            generateLendersHTML(lenderResults) {
+                const lenders = ["Gen H", "Accord", "Skipton", "Kensington", "Precise", "Atom",
+                    "Clydesdale", "Newcastle", "Metro", "Nottingham", "Hinckley & Rugby",
+                    "Leeds", "Principality", "Coventry", "Santander"];
+
+                return lenders.map(lender => {
+                    const amount = lenderResults[lender] || 0;
+                    const isGenH = lender === 'Gen H';
+                    
+                    return `
+                        <div class="lender-card ${isGenH ? 'gen-h' : ''}">
+                            <div class="lender-name">${lender}</div>
+                            <div class="lender-amount">£${this.formatCurrency(amount)}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            formatScenarioTitle(scenarioId) {
+                // Convert scenario_id to readable title
+                const parts = scenarioId.split('_');
+                const type = parts[0]; // joint/single
+                const category = parts[1]; // vanilla/self/employed
+                const amount = parts[parts.length - 1]; // e.g., "40k"
+                
+                const typeStr = type.charAt(0).toUpperCase() + type.slice(1);
+                const categoryStr = category === 'vanilla' ? 'Employed' : 
+                                 category === 'self' ? 'Self-Employed' : category;
+                
+                return `${typeStr} ${categoryStr} - ${amount.toUpperCase()}`;
+            }
+
+            formatCurrency(amount) {
+                if (amount === 0) return '0';
+                return Math.round(amount).toLocaleString();
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AffordabilityDashboard();
+        });
+    </script>
+</body>
+</html>

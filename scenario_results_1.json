@@ -1,0 +1,28 @@
+[
+  {
+    "scenario_id": 1,
+    "description": "Single employed \u00a320k",
+    "case_type": "E.Single",
+    "case_reference": "QX002187461",
+    "income": 20000,
+    "lenders_found": [
+      "Gen H",
+      "Accord",
+      "Skipton",
+      "Kensington",
+      "Precise",
+      "Atom",
+      "Newcastle",
+      "Leeds",
+      "Santander",
+      "Halifax",
+      "Barclays",
+      "HSBC",
+      "Nationwide",
+      "Coventry"
+    ],
+    "lender_count": 14,
+    "status": "success",
+    "timestamp": "2025-06-20T11:43:50.167405"
+  }
+]

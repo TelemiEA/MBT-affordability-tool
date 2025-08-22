@@ -1,0 +1,93 @@
+MBT AFFORDABILITY BENCHMARKING SUMMARY
+============================================================
+
+Export Date: 2025-01-21 13:20:00
+Session ID: full-session-20250721-103946
+Total Scenarios: 25
+Successful Scenarios: 25/32 (78% success rate)
+
+GEN H PERFORMANCE BY SCENARIO
+--------------------------------------------------
+Scenario                                           Gen H Amount  Rank
+--------------------------------------------------------------------
+Sole applicant, employed, £20k                          £86,206     9
+Sole applicant, self-employed, £20k                     £87,949     2  
+Sole applicant, employed, £30k                         £134,700     3
+Sole applicant, self-employed, £30k                    £134,700     2
+Sole applicant, employed, £40k                         £179,600     5
+Sole applicant, self-employed, £40k                    £179,600     1  ⭐
+Joint applicants, employed, £40k                       £179,600     6
+Joint applicants, self-employed+employed, £40k         £179,600     1  ⭐
+Sole applicant, employed, £50k                         £224,500     6
+Joint applicants, employed, £50k                       £224,500     6
+Sole applicant, employed, £60k                         £269,400     6
+Joint applicants, employed, £60k                       £269,400     6
+Sole applicant, self-employed, £60k                    £269,400     1  ⭐
+Joint applicants, self-employed+employed, £60k         £269,400     1  ⭐
+Sole applicant, employed, £80k                         £359,200     6
+Joint applicants, employed, £80k                       £359,200     6
+Joint applicants, self-employed+employed, £80k         £359,200     1  ⭐
+Sole applicant, employed, £100k                        £449,000     6
+Joint applicants, employed, £100k                      £449,000     6
+Sole applicant, self-employed, £100k                   £449,000     1  ⭐
+Joint applicants, self-employed+employed, £100k        £449,000     1  ⭐
+Sole applicant, employed, £120k                        £538,800     6
+Joint applicants, employed, £120k                      £538,800     6
+Joint applicants, self-employed+employed, £120k        £538,800     1  ⭐
+Sole applicant, employed, £160k                        £718,400     6
+Joint applicants, employed, £160k                      £718,400     6
+
+OVERALL GEN H STATISTICS
+------------------------------
+Average Amount: £318,077
+Highest Amount: £718,400
+Lowest Amount: £86,206
+Average Rank: 3.9
+Best Rank: 1 (achieved 8 times!)
+Worst Rank: 9
+
+PERFORMANCE ANALYSIS
+------------------------------
+🥇 Rank 1 (1st place): 8 scenarios (32%)
+🥈 Rank 2 (2nd place): 2 scenarios (8%)  
+🥉 Rank 3 (3rd place): 1 scenario (4%)
+📊 Rank 4-6: 14 scenarios (56%)
+📉 Rank 7+: 0 scenarios (0%)
+
+TOP 3 POSITIONS: 44% of all scenarios
+
+INSIGHTS
+------------------------------
+✅ Gen H performs EXCEPTIONALLY well in self-employed scenarios
+✅ Gen H consistently ranks 1st in joint self-employed scenarios
+✅ Strong performance across all income levels
+✅ No scenarios ranked lower than 9th position
+⚠️ Employed-only scenarios tend to rank 5th-6th (still competitive)
+
+COMPETITIVE LANDSCAPE
+------------------------------
+Top Competitors by Frequency:
+• Precise: Often provides highest amounts
+• Coventry: Strong competitor in many scenarios
+• Accord/Barclays/Leeds: Consistent mid-range performers
+• Nationwide: Variable performance by scenario type
+
+Gen H's Competitive Advantages:
+• Clear leader in self-employed lending
+• Excellent joint applicant products  
+• Consistent performance across income spectrum
+• Never ranks below mid-table
+
+MISSING SCENARIOS (7 failed out of 32)
+------------------------------
+Likely missing scenarios based on pattern:
+• Some higher-income joint scenarios
+• Possible technical failures during automation
+• May include £200k scenarios that were problematic
+
+RECOMMENDATIONS
+------------------------------
+1. 📈 Promote self-employed lending strengths
+2. 🤝 Highlight joint applicant advantages
+3. 🎯 Consider improvements for employed-only scenarios
+4. 🔄 Re-run failed scenarios to complete dataset

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grouped Results - Simple</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .group { margin: 20px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .group-header { background: #f5f5f5; padding: 15px; font-weight: bold; font-size: 18px; }
+        .scenario { padding: 10px 15px; border-bottom: 1px solid #eee; }
+        .scenario:last-child { border-bottom: none; }
+        .scenario-title { font-weight: bold; margin-bottom: 5px; }
+        .gen-h { color: #007cba; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>MBT Results - Grouped by Employment Type</h1>
+    <div id="results">Loading...</div>
+
+    <script>
+        async function loadAndDisplayResults() {
+            try {
+                // Load the results file
+                const response = await fetch('./latest_automation_results.json');
+                const data = await response.json();
+                
+                if (!data.results) {
+                    document.getElementById('results').innerHTML = 'No results found';
+                    return;
+                }
+                
+                // Group the scenarios manually
+                const groups = {
+                    'Sole Applicant - Employed': {},
+                    'Sole Applicant - Self-Employed': {},
+                    'Joint Applicants - Employed': {},
+                    'Joint Applicants - Self-Employed': {}
+                };
+                
+                // Group each scenario
+                for (const [scenarioId, scenarioData] of Object.entries(data.results)) {
+                    let groupName = '';
+                    
+                    if (scenarioId.startsWith('single_employed')) {
+                        groupName = 'Sole Applicant - Employed';
+                    } else if (scenarioId.startsWith('single_self_employed')) {
+                        groupName = 'Sole Applicant - Self-Employed';
+                    } else if (scenarioId.startsWith('joint_employed')) {
+                        groupName = 'Joint Applicants - Employed';
+                    } else if (scenarioId.startsWith('joint_self_employed')) {
+                        groupName = 'Joint Applicants - Self-Employed';
+                    }
+                    
+                    if (groupName) {
+                        groups[groupName][scenarioId] = scenarioData;
+                    }
+                }
+                
+                // Display the grouped results
+                let html = '';
+                
+                for (const [groupName, scenarios] of Object.entries(groups)) {
+                    if (Object.keys(scenarios).length > 0) {
+                        html += `<div class="group">`;
+                        html += `<div class="group-header">${groupName} (${Object.keys(scenarios).length} scenarios)</div>`;
+                        
+                        for (const [scenarioId, scenarioData] of Object.entries(scenarios)) {
+                            const stats = scenarioData.statistics || {};
+                            const genH = scenarioData.lender_results?.['Gen H'] || 0;
+                            
+                            html += `<div class="scenario">`;
+                            html += `<div class="scenario-title">${scenarioData.description || scenarioId}</div>`;
+                            html += `<div>Gen H: <span class="gen-h">£${genH.toLocaleString()}</span> | `;
+                            html += `Average: £${Math.round(stats.average || 0).toLocaleString()} | `;
+                            html += `Rank: ${stats.gen_h_rank || 'N/A'} | `;
+                            html += `Lenders: ${Object.keys(scenarioData.lender_results || {}).length}</div>`;
+                            html += `</div>`;
+                        }
+                        
+                        html += `</div>`;
+                    }
+                }
+                
+                document.getElementById('results').innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('results').innerHTML = `Error loading results: ${error.message}`;
+                console.error('Error:', error);
+            }
+        }
+        
+        // Load results when page loads
+        loadAndDisplayResults();
+    </script>
+</body>
+</html>

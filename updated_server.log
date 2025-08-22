@@ -1,0 +1,64 @@
+INFO:     Started server process [85109]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+🚀 Starting REAL MBT Affordability Benchmarking Tool...
+📱 Dashboard will be available at: http://127.0.0.1:8001
+🔗 Connected to real MBT automation
+INFO:     127.0.0.1:55376 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55452 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55452 - "GET /api/latest-results HTTP/1.1" 200 OK
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £25k
+\n🎯 Running scenario: E.Single with income £25,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £25,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £25,000
+   🚀 Running search for results...
+   ✅ Search button clicked
+   📊 Extracting real lender data...
+   📈 Gen H: £22,348,954,612
+   📈 Accord: £22,348,954,612
+   📈 Skipton: £22,348,954,612
+   📈 Kensington: £22,348,954,612
+   📈 Precise: £22,348,954,612
+   📈 Gen H: £121,886,207
+   📈 Accord: £121,886,207
+   📈 Skipton: £121,886,207
+   📈 Kensington: £121,886,207
+   📈 Precise: £121,886,207
+   📊 Extracted data for 5 lenders
+✅ Scenario 1 completed: 5 lenders found
+\n📊 Running scenario 2: Single employed £35k
+\n🎯 Running scenario: E.Single with income £35,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £35,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £35,000
+   🚀 Running search for results...
+   ✅ Search button clicked
+   📊 Extracting real lender data...
+   📈 Gen H: £22,348,954,612
+   📈 Accord: £22,348,954,612
+   📈 Skipton: £22,348,954,612
+   📈 Kensington: £22,348,954,612
+   📈 Precise: £22,348,954,612
+   📈 Gen H: £121,886,207
+   📈 Accord: £121,886,207
+   📈 Skipton: £121,886,207
+   📈 Kensington: £121,886,207
+   📈 Precise: £121,886,207
+   📊 Extracted data for 5 lenders
+✅ Scenario 2 completed: 5 lenders found
+🎉 Real automation completed: 2 scenarios
+INFO:     127.0.0.1:55455 - "GET /api/run-sample-scenarios HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [85109]

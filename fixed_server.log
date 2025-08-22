@@ -1,0 +1,8 @@
+INFO:     Started server process [85357]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+🚀 Starting REAL MBT Affordability Benchmarking Tool...
+📱 Dashboard will be available at: http://127.0.0.1:8001
+🔗 Connected to real MBT automation
+INFO:     127.0.0.1:55643 - "GET /health HTTP/1.1" 200 OK

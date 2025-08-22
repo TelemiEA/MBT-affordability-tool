@@ -1,0 +1,43 @@
+MBT AFFORDABILITY BENCHMARKING SUMMARY
+==================================================
+
+Export Date: 2025-07-21 22:01:59
+Total Scenarios: 25
+Session ID: full-session-20250721-103946
+
+GEN H PERFORMANCE BY SCENARIO
+----------------------------------------
+Joint applicants, employed, £100k total              £ 550,000 (Rank: 2)
+Joint applicants, employed, £160k total              £ 880,000 (Rank: 2)
+Joint applicants, employed, £40k total               £ 179,600 (Rank: 4)
+Joint applicants, employed, £50k total               £ 275,000 (Rank: 1)
+Joint applicants, employed, £60k total               £ 330,000 (Rank: 1)
+Joint applicants, employed, £80k total               £ 440,000 (Rank: 1)
+Joint applicants, self-employed, £100k total         £ 898,000 (Rank: 8)
+Joint applicants, self-employed, £160k total         £1,000,000 (Rank: 7)
+Joint applicants, self-employed, £200k total         £1,000,000 (Rank: 7)
+Joint applicants, self-employed, £40k total          £ 359,200 (Rank: 4)
+Joint applicants, self-employed, £50k total          £ 449,000 (Rank: 7)
+Joint applicants, self-employed, £60k total          £ 538,800 (Rank: 9)
+Joint applicants, self-employed, £80k total          £ 718,400 (Rank: 9)
+Sole applicant, employed, £100k                      £ 550,000 (Rank: 2)
+Sole applicant, employed, £20k                       £  86,206 (Rank: 9)
+Sole applicant, employed, £30k                       £ 134,700 (Rank: 3)
+Sole applicant, employed, £50k                       £ 275,000 (Rank: 1)
+Sole applicant, employed, £60k                       £ 330,000 (Rank: 1)
+Sole applicant, employed, £80k                       £ 440,000 (Rank: 1)
+Sole applicant, self-employed, £100k                 £ 449,000 (Rank: 4)
+Sole applicant, self-employed, £20k                  £  87,949 (Rank: 2)
+Sole applicant, self-employed, £30k                  £ 134,700 (Rank: 3)
+Sole applicant, self-employed, £50k                  £ 224,500 (Rank: 3)
+Sole applicant, self-employed, £60k                  £ 269,400 (Rank: 3)
+Sole applicant, self-employed, £80k                  £ 359,200 (Rank: 3)
+
+OVERALL STATISTICS
+--------------------
+Average Gen H Amount: £438,346
+Highest Gen H Amount: £1,000,000
+Lowest Gen H Amount: £86,206
+Average Gen H Rank: 3.9
+Best Gen H Rank: 1
+Worst Gen H Rank: 9

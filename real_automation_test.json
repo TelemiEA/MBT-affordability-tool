@@ -1,0 +1,13 @@
+{
+  "case_type": "E.Single",
+  "case_reference": "QX002187461",
+  "income": 30000,
+  "lenders_data": {
+    "Gen H": 121886207,
+    "Accord": 121886207,
+    "Skipton": 121886207,
+    "Kensington": 121886207,
+    "Precise": 121886207
+  },
+  "timestamp": "2025-06-20T12:37:42.356765"
+}

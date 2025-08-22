@@ -1,0 +1,217 @@
+INFO:     Started server process [89689]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+🚀 Starting REAL MBT Affordability Benchmarking Tool...
+📱 Dashboard will be available at: http://127.0.0.1:8001
+🔗 Connected to real MBT automation
+INFO:     127.0.0.1:60882 - "GET /health HTTP/1.1" 200 OK
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 Looking for affordability results on current page...
+   📍 Staying on current page and scrolling to bottom for results...
+   🔍 Looking for lender logos and affordability amounts at bottom...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £157,200
+   💰 Precise: £166,200
+   💰 Kensington: £157,150
+   💰 Accord: £157,150
+   💰 Leeds: £157,150
+   💰 Gen H: £157,150
+   💰 Newcastle: £157,150
+   💰 HSBC: £157,150
+   💰 Barclays: £157,150
+   💰 Halifax: £157,150
+   💰 Nottingham: £157,150
+   💰 Skipton: £157,000
+   💰 Principality: £156,506
+   💰 Santander: £155,750
+   💰 Clydesdale: £155,150
+   💰 Coventry: £152,500
+   💰 Metro: £149,654
+   💰 Atom: £131,072
+   ✅ Successfully extracted 18 target lenders
+   ✅ Successfully extracted 18 lender results from table:
+      💰 Nationwide: £157,200
+      💰 Precise: £166,200
+      💰 Kensington: £157,150
+      💰 Accord: £157,150
+      💰 Leeds: £157,150
+      💰 Gen H: £157,150
+      💰 Newcastle: £157,150
+      💰 HSBC: £157,150
+      💰 Barclays: £157,150
+      💰 Halifax: £157,150
+      💰 Nottingham: £157,150
+      💰 Skipton: £157,000
+      💰 Principality: £156,506
+      💰 Santander: £155,750
+      💰 Clydesdale: £155,150
+      💰 Coventry: £152,500
+      💰 Metro: £149,654
+      💰 Atom: £131,072
+   ✅ Found affordability results on current page!
+   📊 Processing result for scenario_1_single_employed_30k
+   📋 Raw lenders data: {'Nationwide': 157200, 'Precise': 166200, 'Kensington': 157150, 'Accord': 157150, 'Leeds': 157150, 'Gen H': 157150, 'Newcastle': 157150, 'HSBC': 157150, 'Barclays': 157150, 'Halifax': 157150, 'Nottingham': 157150, 'Skipton': 157000, 'Principality': 156506, 'Santander': 155750, 'Clydesdale': 155150, 'Coventry': 152500, 'Metro': 149654, 'Atom': 131072}
+   💰 Processed amounts: {'Nationwide': 157200, 'Precise': 166200, 'Kensington': 157150, 'Accord': 157150, 'Leeds': 157150, 'Gen H': 157150, 'Newcastle': 157150, 'HSBC': 157150, 'Barclays': 157150, 'Halifax': 157150, 'Nottingham': 157150, 'Skipton': 157000, 'Principality': 156506, 'Santander': 155750, 'Clydesdale': 155150, 'Coventry': 152500, 'Metro': 149654, 'Atom': 131072}
+✅ Scenario 1 completed: 18 lenders found
+🎉 Real automation completed: 1 scenarios
+INFO:     127.0.0.1:60896 - "GET /api/run-sample-scenarios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61057 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61114 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61139 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61155 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61155 - "GET /api/latest-results HTTP/1.1" 200 OK
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 Looking for affordability results on current page...
+   📍 Staying on current page and scrolling to bottom for results...
+   🔍 Looking for lender logos and affordability amounts at bottom...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £157,200
+   💰 Precise: £166,200
+   💰 Kensington: £157,150
+   💰 Accord: £157,150
+   💰 Leeds: £157,150
+   💰 Gen H: £157,150
+   💰 Newcastle: £157,150
+   💰 HSBC: £157,150
+   💰 Barclays: £157,150
+   💰 Halifax: £157,150
+   💰 Nottingham: £157,150
+   💰 Skipton: £157,000
+   💰 Principality: £156,506
+   💰 Santander: £155,750
+   💰 Clydesdale: £155,150
+   💰 Coventry: £152,500
+   💰 Metro: £149,654
+   💰 Atom: £131,072
+   ✅ Successfully extracted 18 target lenders
+   ✅ Successfully extracted 18 lender results from table:
+      💰 Nationwide: £157,200
+      💰 Precise: £166,200
+      💰 Kensington: £157,150
+      💰 Accord: £157,150
+      💰 Leeds: £157,150
+      💰 Gen H: £157,150
+      💰 Newcastle: £157,150
+      💰 HSBC: £157,150
+      💰 Barclays: £157,150
+      💰 Halifax: £157,150
+      💰 Nottingham: £157,150
+      💰 Skipton: £157,000
+      💰 Principality: £156,506
+      💰 Santander: £155,750
+      💰 Clydesdale: £155,150
+      💰 Coventry: £152,500
+      💰 Metro: £149,654
+      💰 Atom: £131,072
+   ✅ Found affordability results on current page!
+   📊 Processing result for scenario_1_single_employed_30k
+   📋 Raw lenders data: {'Nationwide': 157200, 'Precise': 166200, 'Kensington': 157150, 'Accord': 157150, 'Leeds': 157150, 'Gen H': 157150, 'Newcastle': 157150, 'HSBC': 157150, 'Barclays': 157150, 'Halifax': 157150, 'Nottingham': 157150, 'Skipton': 157000, 'Principality': 156506, 'Santander': 155750, 'Clydesdale': 155150, 'Coventry': 152500, 'Metro': 149654, 'Atom': 131072}
+   💰 Processed amounts: {'Nationwide': 157200, 'Precise': 166200, 'Kensington': 157150, 'Accord': 157150, 'Leeds': 157150, 'Gen H': 157150, 'Newcastle': 157150, 'HSBC': 157150, 'Barclays': 157150, 'Halifax': 157150, 'Nottingham': 157150, 'Skipton': 157000, 'Principality': 156506, 'Santander': 155750, 'Clydesdale': 155150, 'Coventry': 152500, 'Metro': 149654, 'Atom': 131072}
+✅ Scenario 1 completed: 18 lenders found
+🎉 Real automation completed: 1 scenarios
+INFO:     127.0.0.1:61155 - "GET /api/run-sample-scenarios HTTP/1.1" 200 OK
+🎯 Starting REAL MBT automation...
+🔐 Logging into MBT...
+✅ Login successful
+✅ MBT login successful, running real scenarios...
+\n📊 Running scenario 1: Single employed £30k
+\n🎯 Running scenario: E.Single with income £30,000
+   ✅ Opened case: QX002187461
+   ✅ Reached income section
+   💰 Updating employed income to £30,000
+   🔍 Field value after clearing: ''
+   ✅ Updated salary field to: £30,000
+   ✅ Income updated successfully
+   🚀 Looking for affordability results on current page...
+   📍 Staying on current page and scrolling to bottom for results...
+   🔍 Looking for lender logos and affordability amounts at bottom...
+   📊 Looking for affordability results table with 'Lender', 'Affordable', 'Criteria' headers...
+   🔍 Scrolling to find affordability table...
+   ✅ Found affordability table indicators
+   🔍 Looking for affordability table...
+   📊 Found 1 tables on page
+   🎯 Found affordability table 1
+   📊 Extracting target lenders from table...
+   📋 Processing 56 rows...
+   💰 Nationwide: £157,200
+   💰 Precise: £166,200
+   💰 Kensington: £157,150
+   💰 Accord: £157,150
+   💰 Leeds: £157,150
+   💰 Gen H: £157,150
+   💰 Newcastle: £157,150
+   💰 HSBC: £157,150
+   💰 Barclays: £157,150
+   💰 Halifax: £157,150
+   💰 Nottingham: £157,150
+   💰 Skipton: £157,000
+   💰 Principality: £156,506
+   💰 Santander: £155,750
+   💰 Clydesdale: £155,150
+   💰 Coventry: £152,500
+   💰 Metro: £149,654
+   💰 Atom: £131,072
+   ✅ Successfully extracted 18 target lenders
+   ✅ Successfully extracted 18 lender results from table:
+      💰 Nationwide: £157,200
+      💰 Precise: £166,200
+      💰 Kensington: £157,150
+      💰 Accord: £157,150
+      💰 Leeds: £157,150
+      💰 Gen H: £157,150
+      💰 Newcastle: £157,150
+      💰 HSBC: £157,150
+      💰 Barclays: £157,150
+      💰 Halifax: £157,150
+      💰 Nottingham: £157,150
+      💰 Skipton: £157,000
+      💰 Principality: £156,506
+      💰 Santander: £155,750
+      💰 Clydesdale: £155,150
+      💰 Coventry: £152,500
+      💰 Metro: £149,654
+      💰 Atom: £131,072
+   ✅ Found affordability results on current page!
+   📊 Processing result for scenario_1_single_employed_30k
+   📋 Raw lenders data: {'Nationwide': 157200, 'Precise': 166200, 'Kensington': 157150, 'Accord': 157150, 'Leeds': 157150, 'Gen H': 157150, 'Newcastle': 157150, 'HSBC': 157150, 'Barclays': 157150, 'Halifax': 157150, 'Nottingham': 157150, 'Skipton': 157000, 'Principality': 156506, 'Santander': 155750, 'Clydesdale': 155150, 'Coventry': 152500, 'Metro': 149654, 'Atom': 131072}
+   💰 Processed amounts: {'Nationwide': 157200, 'Precise': 166200, 'Kensington': 157150, 'Accord': 157150, 'Leeds': 157150, 'Gen H': 157150, 'Newcastle': 157150, 'HSBC': 157150, 'Barclays': 157150, 'Halifax': 157150, 'Nottingham': 157150, 'Skipton': 157000, 'Principality': 156506, 'Santander': 155750, 'Clydesdale': 155150, 'Coventry': 152500, 'Metro': 149654, 'Atom': 131072}
+✅ Scenario 1 completed: 18 lenders found
+🎉 Real automation completed: 1 scenarios
+INFO:     127.0.0.1:61204 - "GET /api/run-sample-scenarios HTTP/1.1" 200 OK
