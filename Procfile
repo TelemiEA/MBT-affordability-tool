@@ -1,1 +1,1 @@
-web: python simple_server.py
+web: uvicorn enhanced_server:app --host 0.0.0.0 --port $PORT

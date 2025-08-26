@@ -13,8 +13,22 @@ import csv
 from datetime import datetime, date
 import traceback
 import json
-from real_mbt_automation import RealMBTAutomation
-from supabase_client import supabase_manager
+# Import automation only if Playwright is available (for production deployment)
+try:
+    from real_mbt_automation import RealMBTAutomation
+    AUTOMATION_AVAILABLE = True
+    print("✅ MBT Automation available")
+except ImportError as e:
+    AUTOMATION_AVAILABLE = False
+    print(f"⚠️ MBT Automation not available: {e}")
+
+try:
+    from supabase_client import supabase_manager
+    SUPABASE_AVAILABLE = True
+    print("✅ Supabase client available")
+except ImportError as e:
+    SUPABASE_AVAILABLE = False
+    print(f"⚠️ Supabase not available: {e}")
 
 # Create FastAPI app
 app = FastAPI(
