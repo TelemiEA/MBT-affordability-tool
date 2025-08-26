@@ -1,39 +1,55 @@
 #!/usr/bin/env python3
 """
-Simple test server for Railway deployment debugging
+Ultra-simple test server for Railway
 """
 
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 import os
-import uvicorn
 
-app = FastAPI(title="MBT Tool - Railway Test")
+try:
+    from fastapi import FastAPI
+    print("✅ FastAPI imported successfully")
+except Exception as e:
+    print(f"❌ FastAPI import error: {e}")
+    exit(1)
+
+try:
+    import uvicorn
+    print("✅ Uvicorn imported successfully")
+except Exception as e:
+    print(f"❌ Uvicorn import error: {e}")
+    exit(1)
+
+app = FastAPI()
 
 @app.get("/")
-async def root():
-    return HTMLResponse("""
-    <html>
-        <body>
-            <h1>🚀 MBT Tool is Live on Railway!</h1>
-            <p>Server is working correctly.</p>
-            <p>Port: {port}</p>
-            <p>Environment: Railway</p>
-        </body>
-    </html>
-    """.format(port=os.environ.get("PORT", "Not Set")))
-
-@app.get("/health")
-async def health():
+def read_root():
+    port = os.environ.get("PORT", "Not Set")
     return {
-        "status": "healthy",
-        "port": os.environ.get("PORT", "Not Set"),
-        "environment": "railway"
+        "message": "Server is working!",
+        "port": port,
+        "status": "success"
     }
 
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8001))
-    print(f"🚀 Starting simple server on port {port}")
-    print(f"🔧 Environment variables: PORT={port}")
-    
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    try:
+        port = int(os.environ.get("PORT", 8000))
+        print(f"🚀 Starting server...")
+        print(f"🔧 PORT from env: {os.environ.get('PORT', 'NOT SET')}")
+        print(f"🔧 Using port: {port}")
+        print(f"🔧 Host: 0.0.0.0")
+        
+        uvicorn.run(
+            app, 
+            host="0.0.0.0", 
+            port=port,
+            log_level="info"
+        )
+    except Exception as e:
+        print(f"❌ Server startup error: {e}")
+        import traceback
+        traceback.print_exc()
+        exit(1)
