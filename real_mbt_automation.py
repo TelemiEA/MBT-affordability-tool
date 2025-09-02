@@ -977,7 +977,9 @@ class RealMBTAutomation:
                     "Gen H", "Generation Home", "Accord", "Skipton", "Kensington", "Precise", 
                     "Atom", "Atom Bank", "Clydesdale", "Newcastle", "Metro", "Metro Bank",
                     "Nottingham", "Nottingham Building Society", "Leeds", "Leeds Building Society", 
-                    "Halifax", "HSBC", "Principality", "Coventry", "Santander", "Barclays", "Nationwide"
+                    "Halifax", "HSBC", "Principality", "Coventry", "Santander", "Barclays", "Nationwide",
+                    "Bank of Ireland", "BOI", "Hinckley & Rugby", "Hinckley & Rugby Building Society",
+                    "Market Harborough", "Market Harborough Building Society"
                 ]
                 
                 current_lender_count = sum(1 for lender in lender_variants if lender.lower() in page_text.lower())
@@ -1088,7 +1090,10 @@ class RealMBTAutomation:
                 "Coventry": ["Coventry"],
                 "Principality": ["Principality"],
                 "Furness": ["Furness"],
-                "Penrith": ["Penrith"]
+                "Penrith": ["Penrith"],
+                "Bank of Ireland": ["Bank of Ireland", "BOI"],
+                "Hinckley & Rugby": ["Hinckley & Rugby", "Hinckley & Rugby Building Society", "Hinckley Rugby", "H&R BS"],
+                "Market Harborough": ["Market Harborough", "Market Harborough Building Society", "MH BS", "MHBS"]
             }
             
             # Look for tables on the page
@@ -1214,7 +1219,10 @@ class RealMBTAutomation:
                 "Coventry": ["Coventry"],
                 "Principality": ["Principality"],
                 "Furness": ["Furness"],
-                "Penrith": ["Penrith"]
+                "Penrith": ["Penrith"],
+                "Bank of Ireland": ["Bank of Ireland", "BOI"],
+                "Hinckley & Rugby": ["Hinckley & Rugby", "Hinckley & Rugby Building Society", "Hinckley Rugby", "H&R BS"],
+                "Market Harborough": ["Market Harborough", "Market Harborough Building Society", "MH BS", "MHBS"]
             }
             
             # Get all text content and look for patterns

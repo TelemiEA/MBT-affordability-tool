@@ -577,34 +577,207 @@ async def run_credit_scenarios():
             content={"error": str(e)}
         )
 
+@app.get("/api/run-all-scenarios")
+async def run_all_scenarios():
+    """Run ALL 64 scenarios (32 with credit commitments + 32 without) with enhanced lender coverage."""
+    try:
+        print("🚀 Starting COMPLETE 64-scenario MBT automation...")
+        print("   This will run ALL scenarios: 32 without credit + 32 with credit commitments")
+        print("   Enhanced with 3 additional lenders: Bank of Ireland, Hinckley & Rugby, Market Harborough")
+        
+        automation = RealMBTAutomation()
+        await automation.start_browser()
+        
+        try:
+            login_success = await automation.login()
+            if not login_success:
+                return JSONResponse(
+                    status_code=400,
+                    content={"error": "MBT login failed. Please check credentials."}
+                )
+            
+            print("✅ MBT login successful, running ALL 64 scenarios...")
+            
+            # Get ALL scenarios from database (both credit and non-credit)
+            conn = db_manager.get_connection()
+            cursor = conn.cursor()
+            
+            cursor.execute('''
+                SELECT scenario_id, description, case_type, income 
+                FROM scenarios 
+                ORDER BY has_credit_commitments, income
+            ''')
+            all_scenarios = cursor.fetchall()
+            conn.close()
+            
+            scenarios = []
+            for row in all_scenarios:
+                scenarios.append({
+                    "scenario_id": row[0],
+                    "description": row[1], 
+                    "case_type": row[2],
+                    "income": row[3]
+                })
+            
+            print(f"📋 Found {len(scenarios)} total scenarios to run")
+            print(f"   Expected: 64 scenarios (32 without credit + 32 with credit commitments)")
+            
+            # Generate session ID for this complete run
+            session_id = f'complete-session-{datetime.now().strftime("%Y%m%d-%H%M%S")}'
+            
+            # Run all scenarios
+            successful_count = 0
+            results = {}
+            
+            for i, scenario in enumerate(scenarios, 1):
+                try:
+                    print(f"\n🎯 Running scenario {i}/{len(scenarios)}: {scenario['scenario_id']}")
+                    
+                    result = await automation.run_single_scenario(scenario["case_type"], scenario["income"])
+                    
+                    if result and result.get('lenders_data'):
+                        # Process result
+                        lender_amounts = result['lenders_data']
+                        gen_h_amount = lender_amounts.get('Gen H', 0)
+                        
+                        if lender_amounts:
+                            amounts = list(lender_amounts.values())
+                            average = sum(amounts) / len(amounts)
+                            gen_h_difference = gen_h_amount - average if gen_h_amount else 0
+                            sorted_amounts = sorted(amounts, reverse=True)
+                            gen_h_rank = sorted_amounts.index(gen_h_amount) + 1 if gen_h_amount in sorted_amounts else 0
+                        else:
+                            average = gen_h_difference = gen_h_rank = 0
+                        
+                        # Save to database
+                        db_manager.save_scenario_result(session_id, scenario["scenario_id"], gen_h_amount, 
+                                                       int(average), int(gen_h_difference), gen_h_rank, len(lender_amounts))
+                        db_manager.save_lender_results(session_id, scenario["scenario_id"], lender_amounts)
+                        
+                        # Add to results
+                        results[scenario['scenario_id']] = {
+                            'scenario_id': scenario['scenario_id'],
+                            'description': scenario['description'],
+                            'lender_results': lender_amounts,
+                            'statistics': {
+                                'average': average,
+                                'gen_h_amount': gen_h_amount,
+                                'gen_h_difference': gen_h_difference,
+                                'gen_h_rank': gen_h_rank
+                            }
+                        }
+                        
+                        successful_count += 1
+                        print(f"   ✅ Success: {len(lender_amounts)} lenders, Gen H: £{gen_h_amount:,}")
+                        
+                        # Check for new lenders in results
+                        new_lenders = []
+                        for lender in lender_amounts.keys():
+                            if lender in ['Bank of Ireland', 'Hinckley & Rugby', 'Market Harborough']:
+                                new_lenders.append(lender)
+                        if new_lenders:
+                            print(f"   🆕 New lenders found: {', '.join(new_lenders)}")
+                    else:
+                        print(f"   ❌ Failed: No data extracted")
+                
+                except Exception as scenario_error:
+                    print(f"   ❌ Scenario error: {scenario_error}")
+                    continue
+            
+            # Save automation run details
+            db_manager.save_automation_run(session_id, len(scenarios), successful_count, "completed")
+            
+            # Calculate summary statistics for final result
+            summary_stats = calculate_summary_statistics(results)
+            
+            # Create final result
+            final_result = {
+                'session_id': session_id,
+                'status': 'success',
+                'type': 'complete_all_scenarios',
+                'message': f'Complete automation completed: {successful_count}/{len(scenarios)} scenarios',
+                'total_scenarios': len(scenarios),
+                'successful_scenarios': successful_count,
+                'results': results,
+                'summary_statistics': summary_stats,
+                'timestamp': datetime.now().isoformat(),
+                'enhanced_features': {
+                    'new_lenders_added': ['Bank of Ireland', 'Hinckley & Rugby Building Society', 'Market Harborough Building Society'],
+                    'total_lenders_tracked': 23,  # Original 20 + 3 new ones
+                    'scenario_types': ['without_credit_commitments', 'with_credit_commitments']
+                }
+            }
+            
+            # Save to Supabase for historical tracking
+            print("💾 Saving results to Supabase for historical analysis...")
+            try:
+                # Save automation run summary
+                await supabase_manager.save_automation_run(
+                    session_id=session_id,
+                    run_type='complete',
+                    total_scenarios=len(scenarios),
+                    successful_scenarios=successful_count,
+                    results_data=final_result
+                )
+                
+                # Save individual scenario results
+                for scenario_id, scenario_data in results.items():
+                    await supabase_manager.save_scenario_results(session_id, scenario_id, scenario_data)
+                
+                print("✅ Results saved to Supabase successfully")
+            except Exception as supabase_error:
+                print(f"⚠️ Warning: Could not save to Supabase: {supabase_error}")
+                # Continue with local storage - don't fail the automation
+            
+            # Save complete results  
+            with open(f"complete_automation_{session_id}.json", "w") as f:
+                json.dump(final_result, f, indent=2)
+            
+            # Also save as latest complete results
+            with open("latest_complete_results.json", "w") as f:
+                json.dump(final_result, f, indent=2)
+            
+            print(f"🎉 Complete automation finished: {successful_count}/{len(scenarios)} scenarios")
+            print(f"📊 Results include enhanced lender coverage with 3 new lenders")
+            return JSONResponse(content=final_result)
+            
+        finally:
+            await automation.close()
+        
+    except Exception as e:
+        print(f"❌ Error in complete automation: {e}")
+        return JSONResponse(
+            status_code=500, 
+            content={"error": str(e)}
+        )
+
 @app.get("/api/latest-results")
 async def get_latest_results():
     """Get latest automation results with enhanced grouping and statistics."""
     try:
         print("🔍 API /api/latest-results called")
         
-        # Try to load latest saved results first - check both credit and normal results
+        # Try to load latest saved results first - check credit, normal, and complete results
         credit_file = "latest_credit_results.json"
         normal_file = "latest_automation_results.json"
+        complete_file = "latest_complete_results.json"
         
-        # Determine which file to load (prefer the more recent one)
+        # Check all files and determine which to load (prefer the most recent one)
+        files_to_check = []
+        if os.path.exists(credit_file):
+            files_to_check.append((credit_file, os.path.getmtime(credit_file), "credit"))
+        if os.path.exists(normal_file):
+            files_to_check.append((normal_file, os.path.getmtime(normal_file), "normal"))
+        if os.path.exists(complete_file):
+            files_to_check.append((complete_file, os.path.getmtime(complete_file), "complete"))
+        
         results_file = None
-        if os.path.exists(credit_file) and os.path.exists(normal_file):
-            # Both exist, use the more recent one
-            credit_time = os.path.getmtime(credit_file)
-            normal_time = os.path.getmtime(normal_file)
-            if credit_time > normal_time:
-                results_file = credit_file
-                print("📁 Loading latest_credit_results.json (more recent)")
-            else:
-                results_file = normal_file
-                print("📁 Loading latest_automation_results.json (more recent)")
-        elif os.path.exists(credit_file):
-            results_file = credit_file
-            print("📁 Loading latest_credit_results.json (only available)")
-        elif os.path.exists(normal_file):
-            results_file = normal_file
-            print("📁 Loading latest_automation_results.json (only available)")
+        if files_to_check:
+            # Sort by modification time (newest first)
+            files_to_check.sort(key=lambda x: x[1], reverse=True)
+            results_file = files_to_check[0][0]
+            file_type = files_to_check[0][2]
+            print(f"📁 Loading {results_file} ({file_type} results - most recent)")
         
         if results_file:
             with open(results_file, 'r') as f:
