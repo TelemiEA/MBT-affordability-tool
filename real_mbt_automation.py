@@ -34,12 +34,40 @@ class RealMBTAutomation:
     
     async def start_browser(self):
         """Start browser session."""
-        self.playwright = await async_playwright().start()
-        self.browser = await self.playwright.chromium.launch(
-            headless=False,  # Keep visible so you can see it working
-            slow_mo=1000
-        )
-        self.page = await self.browser.new_page()
+        try:
+            self.playwright = await async_playwright().start()
+            
+            # Cloud-friendly browser configuration
+            browser_args = [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-accelerated-2d-canvas',
+                '--no-first-run',
+                '--no-zygote',
+                '--disable-gpu',
+                '--disable-background-timer-throttling',
+                '--disable-backgrounding-occluded-windows',
+                '--disable-renderer-backgrounding'
+            ]
+            
+            # Auto-detect environment (local vs cloud)
+            import os
+            is_production = os.getenv('RAILWAY_ENVIRONMENT_NAME') or os.getenv('PORT')
+            
+            self.browser = await self.playwright.chromium.launch(
+                headless=bool(is_production),  # Headless in production, visible locally
+                slow_mo=0 if is_production else 1000,  # No slow mode in production
+                args=browser_args if is_production else []
+            )
+            self.page = await self.browser.new_page()
+            
+            print(f"🌐 Browser started ({'headless' if is_production else 'visible'} mode)")
+            
+        except Exception as e:
+            print(f"❌ Browser startup failed: {e}")
+            # Re-raise with more context
+            raise Exception(f"Failed to start browser for MBT automation: {e}")
         
     async def close(self):
         """Close browser session."""
