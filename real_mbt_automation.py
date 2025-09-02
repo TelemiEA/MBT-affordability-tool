@@ -65,9 +65,22 @@ class RealMBTAutomation:
             print(f"🌐 Browser started ({'headless' if is_production else 'visible'} mode)")
             
         except Exception as e:
+            error_msg = str(e)
             print(f"❌ Browser startup failed: {e}")
-            # Re-raise with more context
-            raise Exception(f"Failed to start browser for MBT automation: {e}")
+            
+            # Provide specific guidance for different error types
+            if "Host system is missing dependencies" in error_msg:
+                print("🔧 This appears to be a system dependency issue on the deployment platform.")
+                print("💡 The application requires system packages for Chromium browser.")
+                print("🚀 This should be resolved by updating the deployment configuration.")
+                raise Exception(f"Browser dependencies missing on host system. This is a deployment configuration issue, not a code issue. Original error: {e}")
+            elif "executable doesn't exist" in error_msg:
+                print("🔧 Chromium browser executable not found.")
+                print("💡 Try running: playwright install chromium")
+                raise Exception(f"Chromium browser not installed. Original error: {e}")
+            else:
+                # Re-raise with more context for other errors
+                raise Exception(f"Failed to start browser for MBT automation: {e}")
         
     async def close(self):
         """Close browser session."""
