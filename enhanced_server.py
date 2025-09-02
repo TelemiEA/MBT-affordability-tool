@@ -1,5 +1,6 @@
 """
-Enhanced MBT Server with Historical Data Storage and Full 32 Scenarios
+Enhanced MBT Server with Historical Data Storage and Full 64 Scenarios
+Enhanced with 3 new lenders: Bank of Ireland, Hinckley & Rugby, Market Harborough
 """
 
 from fastapi import FastAPI, Request
