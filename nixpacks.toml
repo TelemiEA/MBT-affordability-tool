@@ -2,11 +2,11 @@
 
 [phases.install]
 cmds = [
-    # Install Python dependencies first
-    "pip install -r requirements.txt",
+    # Install Python dependencies using python -m pip (more reliable)
+    "python -m pip install -r requirements.txt",
     # Install Playwright browsers
     "python -m playwright install chromium",
-    # Let Playwright install its own system dependencies
+    # Let Playwright install its own system dependencies  
     "python -m playwright install-deps chromium"
 ]
 
